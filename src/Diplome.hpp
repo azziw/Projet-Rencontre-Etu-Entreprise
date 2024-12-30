@@ -13,6 +13,8 @@ class Diplome {
         string lieuObtention;
 
     public:
+        Diplome(){} //Constructeur par défaut
+
         Diplome(string code, string nom, tm date, string lieu)
         {
             Code = code;
