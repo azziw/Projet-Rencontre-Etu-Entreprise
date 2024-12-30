@@ -19,7 +19,7 @@ int main() {
     // Affichage des diplômes
     dd.afficher();
 
-    dd.afficher();
+    //dziizdjiozdjoijioj
 
     return 0;
 }
