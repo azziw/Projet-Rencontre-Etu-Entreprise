@@ -23,6 +23,15 @@ void Etudiant::addExperience(ExperiencePro E){
 void Etudiant::addRendezVous(RendezVous R){
     rendezVous.push_back(R);
     R->rendezVous.push_back(this); 
-}
+};
 
-s
+// getCV() !!
+
+
+void Etudiant::setNumeroEtudiant(int num){
+    numeroEtudiant = num;
+};
+
+
+
+

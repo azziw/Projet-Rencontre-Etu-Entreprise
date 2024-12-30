@@ -16,4 +16,4 @@ class EtudiantDeuxiemeCycle : public Etudiant {
             NomDisciplinePrincipale = NomDiscipline;
         }
 
-}
+};

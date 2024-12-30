@@ -5,15 +5,16 @@
 using namespace std;
 
 class Etudiant {
-    int numeroEtudiant;
-    string nom;
-    string prenom;
-    string adresse;
-    string numeroTel;
-    InscriptionActuelle diplomeActuel;
-    vector<ExperiencePro> listeExperience;
-    vector<RendezVous> rendezVous;
-    vector<Diplome> listeDiplomes;
+    private : 
+        int numeroEtudiant;
+        string nom;
+        string prenom;
+        string adresse;
+        string numeroTel;
+        InscriptionActuelle diplomeActuel;
+        vector<ExperiencePro> listeExperience;
+        vector<RendezVous> rendezVous;
+        vector<Diplome> listeDiplomes;
 
     public: 
         // Constructeur 
@@ -37,5 +38,20 @@ class Etudiant {
         getCV();
 
 
+        string getNumeroEtudiant() const;
+        string getNomEtudiant() const;
+        string getPrenomEtudiant() const;
+        string getAdresseEtudiant() const;
+        string getNumeroTel() const;
+        InscriptionActuelle getDiplomeActuel() const;
+        
+        void setNumeroEtudiant(int num);
+        void setNomEtudiant(string nom);
+        void setPrenomEtudiant(string prenom);
+        void setAdresseEtudiant(string adresse);
+        void setNumeroTel(string tel);
+        void setDiplomeActuel(InscriptionActuelle Inscription);
+
+        
 
 };
