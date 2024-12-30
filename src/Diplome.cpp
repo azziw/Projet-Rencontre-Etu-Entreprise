@@ -4,7 +4,6 @@ using namespace std;
 
 #include "Diplome.hpp"
 
-
 void Diplome::afficher() const {
 
     char dateStr[11];  // Format "YYYY-MM-DD"
