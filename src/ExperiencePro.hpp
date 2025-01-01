@@ -24,6 +24,19 @@ class ExperiencePro {
         // Ajout d'un etudiant 
         void addEtudiant(Etudiant etu);
 
+        date getDateDebut() const;
+        date getDateFin() const;
+        string getNomEnt() const;
+        string getFonction() const;
+        Etudiant getEtudiant() const;
+
+        void setDateDebut(date d);
+        void setDateFin(date d);
+        void setNomEnt(string nom);
+        void setFonction(string fonc);
+        void setEtudiant(Etudiant etu);
+
+
 
 
 }

@@ -20,6 +20,12 @@ class EtudiantPremierCycle : public Etudiant {
             lieuObtentionBac = lieu;
         };
 
+        string getSerie() const;
+        string getAnneeBac() const;
+        string getLieuBac() const;
 
+        void setSerie(string s);
+        void setAnneeBac(string annee);
+        void setLieuBac(string Lieu);
 
 };

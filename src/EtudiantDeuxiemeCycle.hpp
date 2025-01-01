@@ -16,4 +16,8 @@ class EtudiantDeuxiemeCycle : public Etudiant {
             NomDisciplinePrincipale = NomDiscipline;
         }
 
+        string getNomDiscipline() const;
+
+        void setNomDiscipline(string nom);
+
 };

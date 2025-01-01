@@ -4,6 +4,11 @@
 
 using namespace std;
 
+#include "InscriptionActuelle.hpp"
+#include "ExperiencePro.hpp"
+#include "Diplome.hpp"
+
+
 class Etudiant {
     private : 
         int numeroEtudiant;
@@ -38,17 +43,17 @@ class Etudiant {
         getCV();
 
 
-        string getNumeroEtudiant() const;
+        int getNumeroEtudiant() const;
         string getNomEtudiant() const;
         string getPrenomEtudiant() const;
         string getAdresseEtudiant() const;
         string getNumeroTel() const;
         InscriptionActuelle getDiplomeActuel() const;
-        
+
         void setNumeroEtudiant(int num);
-        void setNomEtudiant(string nom);
-        void setPrenomEtudiant(string prenom);
-        void setAdresseEtudiant(string adresse);
+        void setNomEtudiant(string Nom);
+        void setPrenomEtudiant(string Prenom);
+        void setAdresseEtudiant(string Adresse);
         void setNumeroTel(string tel);
         void setDiplomeActuel(InscriptionActuelle Inscription);
 
