@@ -14,7 +14,7 @@ class Entreprise
         string adresse;
         string nomContact;
         string telephoneContact;
-        vector<RendezVous *> rendezVous;
+        vector<RendezVous *> ensRendezVous;
 
     public:
         Entreprise(string Nom, string Adresse, string NomC, string tel)
@@ -37,7 +37,7 @@ class Entreprise
         
         void addRendezVous(RendezVous* rdv);
         void setRendezVous(Etudiant* etu, tm date, tm heureDebut, tm heureFin);
-        void checkDispo(RendezVous* rdv);
+        bool checkDispo(RendezVous* rdv);
 };
 
 #endif
