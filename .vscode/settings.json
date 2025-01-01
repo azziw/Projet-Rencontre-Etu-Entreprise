@@ -3,6 +3,8 @@
         "*.embeddedhtml": "html",
         "vector": "cpp",
         "string": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp"
     }
 }
