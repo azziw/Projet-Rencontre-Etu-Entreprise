@@ -5,6 +5,25 @@ using namespace std;
 #include "Entreprise.hpp"
 
 
+bool Entreprise::checkDispo(RendezVous* rdv)
+{
+    vector<RendezVous*>::iterator iT;
+
+    for(iT = rendezVous.begin(); iT != rendezVous.end(); iT++)
+    {
+        if((*iT)->getDate().tm_year == rdv->getDate().tm_year &&
+            (*iT)->getDate().tm_mon == rdv->getDate().tm_mon &&
+            (*iT)->getDate().tm_mday == rdv->getDate().tm_mday)
+        {
+            if(*iT)->getDate()
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
 void Entreprise::addRendezVous(RendezVous* rdv)
 {
     rendezVous.push_back(rdv);
