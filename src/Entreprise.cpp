@@ -11,21 +11,14 @@ bool Entreprise::checkDispo(RendezVous* rdv)
     for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
     {
         //Si il existe deja un rendez-vous le même jour
-        if((*iT)->getDate().tm_year == rdv->getDate().tm_year &&
-            (*iT)->getDate().tm_mon == rdv->getDate().tm_mon &&
-            (*iT)->getDate().tm_mday == rdv->getDate().tm_mday)
+        if((*iT)->getDate() == rdv->getDate())
         {
             //Alors je regarde si le rendez-vous est au milieu du créneau d'un rendez-vous existant
             
             //Si le rendez-vous que j'ajoute est a la même heure qu'un existant
-            if((*iT)->getHeureDebut().tm_hour == rdv->getHeureDebut().tm_hour)
+            if ((*iT)->getHeureDebut() < rdv->getHeureFin() && rdv->getHeureDebut() < (*iT)->getHeureFin()) 
             {
-                //Je regarde les minutes et je vérifie qu'elles ne se chevauchent pas
-                if((*iT)->getHeureDebut().tm_min <= rdv->getHeureDebut().tm_min && 
-                (*iT)->getHeureFin().tm_min >= rdv->getHeureDebut().tm_min)
-                {
-                    return false;
-                }
+                return false;
             }
         }
     }
@@ -45,9 +38,9 @@ void Entreprise::addRendezVous(RendezVous* rdv)
     }
 }
 
-void Entreprise::setRendezVous(Etudiant* etu, tm date, tm heureDebut, tm heureFin)
+void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin)
 {
-    RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, *etu, *this);
+    RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, etu, this);
 
     if(checkDispo(rdv))
     {

@@ -4,52 +4,57 @@ using namespace std;
 
 #include "RendezVous.hpp"
 
-tm RendezVous::getDate() const
+void RendezVous::Affiche()
 {
-    return date;
+    cout << "Rendez-Vous entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " Le " << date << " de" << heureDebut << " à " << heureFin << endl;
 }
 
-tm RendezVous::getHeureDebut() const
+Date RendezVous::getDate() const
 {
-    return heureDebut;
+    return *date;
 }
 
-tm RendezVous::getHeureFin() const
+Heure RendezVous::getHeureDebut() const
 {
-    return heureFin;
+    return *heureDebut;
+}
+
+Heure RendezVous::getHeureFin() const
+{
+    return *heureFin;
 }
 
 Etudiant RendezVous::getEtudiant() const
 {
-    return etudiant;
+    return *etudiant;
 }
 
 Entreprise RendezVous::getEntreprise() const
 {
-    return entreprise;
+    return *entreprise;
 }
 
-void RendezVous::setDate(tm Date)
+void RendezVous::setDate(Date* Date)
 {
     date = Date;
 }
 
-void RendezVous::setHeureDebut(tm HeureD)
+void RendezVous::setHeureDebut(Heure* HeureD)
 {
     heureDebut = HeureD;
 }
 
-void RendezVous::setHeureFin(tm HeureF)
+void RendezVous::setHeureFin(Heure* HeureF)
 {
     heureFin = HeureF;
 }
 
-void RendezVous::setEtudiant(Etudiant etu)
+void RendezVous::setEtudiant(Etudiant* etu)
 {
     etudiant = etu;
 }
 
-void RendezVous::setEntreprise(Entreprise ent)
+void RendezVous::setEntreprise(Entreprise* ent)
 {
     entreprise = ent;
 }

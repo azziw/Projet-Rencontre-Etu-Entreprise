@@ -4,6 +4,8 @@
 #include <iostream>
 
 #include "RendezVous.hpp"
+#include "Date.hpp"
+#include "Heure.hpp"
 
 using namespace std;
 
@@ -36,7 +38,7 @@ class Entreprise
         void setTelephoneContact(string telContact);
         
         void addRendezVous(RendezVous* rdv);
-        void setRendezVous(Etudiant* etu, tm date, tm heureDebut, tm heureFin);
+        void setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin);
         bool checkDispo(RendezVous* rdv);
 };
 

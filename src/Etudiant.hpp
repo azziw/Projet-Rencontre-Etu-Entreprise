@@ -16,10 +16,10 @@ class Etudiant {
         string prenom;
         string adresse;
         string numeroTel;
-        InscriptionActuelle diplomeActuel;
-        vector<ExperiencePro> listeExperience;
-        vector<RendezVous> rendezVous;
-        vector<Diplome> listeDiplomes;
+        InscriptionActuelle* diplomeActuel;
+        vector<ExperiencePro *> listeExperience;
+        vector<RendezVous *> rendezVous;
+        vector<Diplome *> listeDiplomes;
 
     public: 
         // Constructeur 
@@ -40,7 +40,7 @@ class Etudiant {
         // Ajout d'un rendez vous
         void addRendezVous(RendezVous R);
 
-        getCV();
+        //getCV();
 
 
         int getNumeroEtudiant() const;
