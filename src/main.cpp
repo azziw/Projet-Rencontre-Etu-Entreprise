@@ -28,7 +28,7 @@ int main() {
     Heure h1(1, 2);
 
     RendezVous r1(&date1, &heureDebut, &heureFin, &etu1, &ent1);
-    RendezVous r2(&date2, &heureDebut, &heureFin, &etu1, &ent1);
+    RendezVous r2(&date1, &heureDebut, &heureFin, &etu1, &ent1);
 
     // h1.Affiche();
     // cout<< h1.tempsTotal() << endl;
@@ -38,11 +38,14 @@ int main() {
 
     // ent1.setRendezVous(&etu1, &date1, &heureDebut2, &heureFin2); 
     ent1.addRendezVous(&r1);
-    ent1.AfficheRdv();  
+    ent1.AfficheRdv(); 
+
+    // ent1.addRendezVous(&r2); 
+
+    // ent1.AfficheRdv();  
+    etu1.AfficheRdv();
 
     ent1.removeRendezVous(&r2);
-
-    ent1.AfficheRdv();  
     
     
     // r1.Affiche();

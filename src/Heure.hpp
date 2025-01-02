@@ -9,7 +9,7 @@ class Heure {
     public:
         Heure(int H, int M)
         {
-            if (H < 0 || H > 24 || M < 0 || M > 60) {
+            if (H < 0 || H > 23 || M < 0 || M > 59) {
             throw invalid_argument("Heure ou minutes invalides");
             }
             heures = H;

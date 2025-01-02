@@ -15,17 +15,17 @@ RendezVous* Entreprise::checkDispo(RendezVous* rdv)
     for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
     {
         //Si il existe deja un rendez-vous le même jour
-        if((*iT)->getDate() == rdv->getDate())
+        if(*(*iT)->getDate() == *rdv->getDate())
         {
             //Alors je regarde si le rendez-vous est au milieu du créneau d'un rendez-vous existant
             
             //Si le rendez-vous est pendant un autre rendez-vous
-            if ((*iT)->getHeureDebut() < rdv->getHeureFin() && rdv->getHeureDebut() < (*iT)->getHeureFin()) 
+            if (*(*iT)->getHeureDebut() < *rdv->getHeureFin() && *rdv->getHeureDebut() < *(*iT)->getHeureFin()) 
             {
                 return *iT;
             }
             //Si le rendez-vous que j'ajoute est a la même heure qu'un existant
-            if ((*iT)->getHeureDebut() == rdv->getHeureFin() && rdv->getHeureDebut() == (*iT)->getHeureFin()) 
+            if (*(*iT)->getHeureDebut() == *rdv->getHeureFin() && *rdv->getHeureDebut() == *(*iT)->getHeureFin()) 
             {
                 return *iT;
             }
@@ -50,17 +50,15 @@ void Entreprise::addRendezVous(RendezVous* rdv)
         //Si il n'y a pas de conflit pour l'etudiant concerne
         if(conflitEtu == nullptr)
         {
-            cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
+            cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
             ensRendezVous.push_back(rdv);
             etudiantConcerne->addRendezVous(rdv);
         }
         //Si il n'y a pas de conflit pour l'entreprise mais qu'il y en a un pour l'etudiant
         else
         {
-            cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << rdv->getDate()->toString() << " de " <<
-            rdv->getHeureDebut()->toString() << " à " << rdv->getHeureFin()->toString() << " n'est pas disponible." << endl <<
-            "Celui-ci est en conflit avec le rdv de: " << conflitEtu->toString() << endl << //erreur on affiche que le créneau n'est pas dispo
-            "Veuillez Réessayer!" << endl;
+            cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
+            ensRendezVous.push_back(rdv);
         }
     }
     //Si il y a un conflit pour l'entreprise
@@ -75,13 +73,16 @@ void Entreprise::addRendezVous(RendezVous* rdv)
 
 void Entreprise::removeRendezVous(RendezVous* rdv)
 {
-
     cout << endl;
 
-    if(checkDispo(rdv) == nullptr)
+    RendezVous* conflitEnt = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'entreprise
+
+    //Si on trouve ne trouve pas le rendez-vous
+    if(conflitEnt == nullptr)
     {
         cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", il n'est pas programmé pour " << nom << endl; 
     }
+    //On trouve le rendez-vous
     else
     {
         vector<RendezVous*>::iterator iT;
@@ -91,11 +92,15 @@ void Entreprise::removeRendezVous(RendezVous* rdv)
             if((*iT) == rdv)
             {
                 ensRendezVous.erase(iT);
-                cout << "Le rendez-vous " << rdv->toString() << " a été supprimé avec succès." << endl;
+                cout << "Le rendez-vous " << rdv->toString() << " a été supprimé de " << nom << " avec succès." << endl;
                 return;
             }
         }
+        cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", il n'est pas programmé pour " << nom << endl; 
     }
+
+    Etudiant* etudiantConcerne = rdv->getEtudiant();
+    // etudiantConcerne->removeRendezVous(rdv); // On enlève aussi le rendez-vous pour l'étudiant
 }
 
 void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin)

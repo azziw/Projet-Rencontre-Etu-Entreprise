@@ -46,6 +46,7 @@ class Etudiant {
         void AfficheRdv();
         RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* R);
+        void removeRendezVous(RendezVous* rdv);
         //getCV();
 
         int getNumeroEtudiant() const;
