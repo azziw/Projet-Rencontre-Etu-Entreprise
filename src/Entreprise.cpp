@@ -8,7 +8,7 @@ using namespace std;
 #include "Heure.hpp"
 #include "Etudiant.hpp"
 
-bool Entreprise::checkDispo(RendezVous* rdv)
+RendezVous* Entreprise::checkDispo(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
 
@@ -22,17 +22,17 @@ bool Entreprise::checkDispo(RendezVous* rdv)
             //Si le rendez-vous est pendant un autre rendez-vous
             if ((*iT)->getHeureDebut() < rdv->getHeureFin() && rdv->getHeureDebut() < (*iT)->getHeureFin()) 
             {
-                return false;
+                return *iT;
             }
             //Si le rendez-vous que j'ajoute est a la même heure qu'un existant
             if ((*iT)->getHeureDebut() == rdv->getHeureFin() && rdv->getHeureDebut() == (*iT)->getHeureFin()) 
             {
-                return false;
+                return *iT;
             }
         }
     }
     //si il n'y a pas de problème, le rendez-vous est disponible
-    return true;
+    return nullptr;
 }
 
 
@@ -56,7 +56,9 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
 
     cout << endl;
 
-    if(checkDispo(rdv))
+    RendezVous* conflitRdv = checkDispo(rdv); //On stocke le rdv pour l'afficher en cas de conflit
+
+    if(conflitRdv == nullptr)
     {
         cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
         ensRendezVous.push_back(rdv);
@@ -64,7 +66,10 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
     }
     else
     {
-        cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << date->toString() << " de " << heureDebut->toString() << " à " << heureFin->toString() << " n'est pas disponible." << endl; //erreur on affiche que le créneau n'est pas dispo
+        cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << date->toString() << " de " <<
+        heureDebut->toString() << " à " << heureFin->toString() << " n'est pas disponible." << endl <<
+        "Celui-ci est en conflit avec le rdv de: " << conflitRdv->toString() << endl << //erreur on affiche que le créneau n'est pas dispo
+        "Veuillez Réessayer!" << endl;
     }
 }
 

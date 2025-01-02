@@ -30,7 +30,7 @@ class Entreprise
 
 
         void AfficheRdv();
-        bool checkDispo(RendezVous* rdv);
+        RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* rdv);
 
         string getNom() const;
