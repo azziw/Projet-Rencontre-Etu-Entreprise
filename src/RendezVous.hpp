@@ -3,10 +3,11 @@
 
 #include <iostream>
 
-#include "Entreprise.hpp"
-#include "Etudiant.hpp"
-#include "Date.hpp"
-#include "Heure.hpp"
+//on fait des déclarations anticipées pour éviter des inclusions circulaires entre etudiant.hpp et rendezVous.hpp
+class Entreprise;
+class Etudiant;
+class Date;
+class Heure;
 
 using namespace std;
 

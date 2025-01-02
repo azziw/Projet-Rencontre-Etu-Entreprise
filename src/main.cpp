@@ -5,6 +5,7 @@
 // #include "RendezVous.hpp"
 #include "Date.cpp"
 #include "Heure.cpp"
+#include "Entreprise.hpp"
 
 int main() {
     // Création de deux diplômes
@@ -17,13 +18,15 @@ int main() {
     // Diplome d2("D002", "Informatique", date, "Lyon");
 
     // Etudiant e1(2, "azzi", "william", "adresse", "0606060606");
-    // Entreprise ent1("entreprise", "adresse", "contact", "06060606");
+    Entreprise ent1("entreprise", "adresse", "contact", "06060606");
 
     Date date1(2022, 01, 3);
     Heure h1(1, 2);
 
     h1.Affiche();
     cout<< h1.tempsTotal() << endl;
+
+
 
     // RendezVous r1(date, date, date, &e1, &ent1);
 

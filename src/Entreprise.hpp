@@ -3,9 +3,10 @@
 
 #include <iostream>
 
-#include "RendezVous.hpp"
-#include "Date.hpp"
-#include "Heure.hpp"
+class RendezVous;
+class Etudiant;
+class Date;
+class Heure;
 
 using namespace std;
 

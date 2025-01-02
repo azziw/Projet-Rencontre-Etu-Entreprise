@@ -1,13 +1,17 @@
-# include <iostream>
+#ifndef ETUDIANT_HPP
+#define ETUDIANT_HPP
+
+#include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
-#include "InscriptionActuelle.hpp"
-#include "ExperiencePro.hpp"
-#include "Diplome.hpp"
-
+//on fait des déclarations anticipées pour éviter des inclusions circulaires entre etudiant.hpp et rendezVous.hpp
+class RendezVous;
+class InscriptionActuelle;
+class ExperiencePro;
+class Diplome;
 
 class Etudiant {
     private : 
@@ -32,13 +36,13 @@ class Etudiant {
         }
 
         // Ajout d'un Diplome 
-        void addDiplome(Diplome D);
+        void addDiplome(Diplome* D);
 
         // Ajout d'une experience
-        void addExperience(ExperiencePro E);
+        void addExperience(ExperiencePro* E);
 
         // Ajout d'un rendez vous
-        void addRendezVous(RendezVous R);
+        void addRendezVous(RendezVous* R);
 
         //getCV();
 
@@ -60,3 +64,5 @@ class Etudiant {
         
 
 };
+
+#endif
