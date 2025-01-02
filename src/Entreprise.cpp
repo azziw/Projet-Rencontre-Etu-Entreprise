@@ -19,8 +19,13 @@ bool Entreprise::checkDispo(RendezVous* rdv)
         {
             //Alors je regarde si le rendez-vous est au milieu du créneau d'un rendez-vous existant
             
-            //Si le rendez-vous que j'ajoute est a la même heure qu'un existant
+            //Si le rendez-vous est pendant un autre rendez-vous
             if ((*iT)->getHeureDebut() < rdv->getHeureFin() && rdv->getHeureDebut() < (*iT)->getHeureFin()) 
+            {
+                return false;
+            }
+            //Si le rendez-vous que j'ajoute est a la même heure qu'un existant
+            if ((*iT)->getHeureDebut() == rdv->getHeureFin() && rdv->getHeureDebut() == (*iT)->getHeureFin()) 
             {
                 return false;
             }
@@ -29,6 +34,9 @@ bool Entreprise::checkDispo(RendezVous* rdv)
     //si il n'y a pas de problème, le rendez-vous est disponible
     return true;
 }
+
+
+// AJOUTER AUSSI A ETUDIANT ?? SINON EXPLIQUER POURQUOI ON NE LE FAIT PAS (DEJA LE CAS VIA SETRDV)
 
 void Entreprise::addRendezVous(RendezVous* rdv)
 {
@@ -46,14 +54,17 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
 {
     RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, etu, this);
 
+    cout << endl;
+
     if(checkDispo(rdv))
     {
+        cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
         ensRendezVous.push_back(rdv);
         etu->addRendezVous(rdv);   
     }
     else
     {
-        cerr << "Impossible d'ajouter ce rendez-vous, le créneau n'est pas disponible." << endl;
+        cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << date->toString() << " de " << heureDebut->toString() << " à " << heureFin->toString() << " n'est pas disponible." << endl; //erreur on affiche que le créneau n'est pas dispo
     }
 }
 
@@ -61,6 +72,7 @@ void Entreprise::AfficheRdv()
 {
     vector<RendezVous *>::iterator iT;
 
+    cout << endl;
     cout << "L'entreprise " << nom << " a les rendez-vous suivants:" << endl;
 
     for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)

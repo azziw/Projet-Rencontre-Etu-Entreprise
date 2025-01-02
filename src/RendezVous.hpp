@@ -43,6 +43,7 @@ class RendezVous
         void setEtudiant(Etudiant* etu);
         void setEntreprise(Entreprise* ent);
         void Affiche();
+        string toString();
 };
 
 #endif

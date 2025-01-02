@@ -1,12 +1,15 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip> // utilisé pour setw et setfill
+#include <sstream> // utilisé pour stringstream
 
 using namespace std;
 
 #include "Heure.hpp"
 
 string Heure::toString() const {
-    return to_string(heures) + "h" + to_string(minutes);
+    stringstream s; // utilisé pour concatener les chaines correctement
+    s << setw(2) << setfill('0') << heures << "h" << setw(2) << setfill('0') << minutes;
+    return s.str();
 }
 
 int Heure::tempsTotal() const

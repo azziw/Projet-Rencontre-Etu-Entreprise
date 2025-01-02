@@ -1,12 +1,15 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip> // utilisé pour setw et setfill
+#include <sstream> // utilisé pour stringstream
 
 using namespace std;
 
 #include "Date.hpp"
 
 string Date::toString() const {
-    return to_string(annee) + "-" + to_string(mois) + "-" + to_string(jour);
+    stringstream s; // utilisé pour concatener les chaines correctement
+    s << setw(2) << setfill('0') << jour << "-" << setw(2) << setfill('0') << mois << "-" << setw(2) << setfill('0') << annee;
+    return s.str();
 }
 
 void Date::Affiche() const

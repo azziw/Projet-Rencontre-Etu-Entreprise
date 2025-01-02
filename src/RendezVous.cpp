@@ -13,6 +13,11 @@ void RendezVous::Affiche()
     cout << "Rdv entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " le " << date->toString() << " de " << heureDebut->toString() << " à " << heureFin->toString() << endl;
 }
 
+string RendezVous::toString()
+{
+    return etudiant->getNomEtudiant() + " et " + entreprise->getNom() + " le " + date->toString() + " de " + heureDebut->toString() + " à " + heureFin->toString();
+}
+
 Date RendezVous::getDate() const
 {
     return *date;
