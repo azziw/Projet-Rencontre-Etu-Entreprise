@@ -25,15 +25,9 @@ void Etudiant::addRendezVous(RendezVous* R){
 // getCV() !!
 
 
-void Etudiant::setNumeroEtudiant(int num){
-    numeroEtudiant = num;
-};
-
-
 int Etudiant::getNumeroEtudiant() const {
     return numeroEtudiant;
 }
-
 
 string Etudiant::getNomEtudiant() const {
     return nom;
