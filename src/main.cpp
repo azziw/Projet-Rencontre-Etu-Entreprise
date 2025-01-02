@@ -29,7 +29,7 @@ int main() {
     h1.Affiche();
     cout<< h1.tempsTotal() << endl;
 
-    ent1.addRendezVous(&r1);
+    ent1.setRendezVous(&etu1, &date1, &heureDebut, &heureFin);
     ent1.AfficheRdv();
     etu1.AfficheRdv();
     
