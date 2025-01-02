@@ -28,6 +28,11 @@ class Entreprise
             telephoneContact = tel;
         }
 
+
+        void AfficheRdv();
+        bool checkDispo(RendezVous* rdv);
+        void addRendezVous(RendezVous* rdv);
+
         string getNom() const;
         string getAdresse() const;
         string getNomContact() const;
@@ -37,11 +42,8 @@ class Entreprise
         void setAdresse(string Adresse);
         void setNomContact(string NomContact);
         void setTelephoneContact(string telContact);
-        
-        void addRendezVous(RendezVous* rdv);
         void setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin);
-        void AfficheRdv();
-        bool checkDispo(RendezVous* rdv);
+        
 };
 
 #endif

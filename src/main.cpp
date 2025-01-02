@@ -31,6 +31,7 @@ int main() {
 
     ent1.addRendezVous(&r1);
     ent1.AfficheRdv();
+    etu1.AfficheRdv();
     
     
     // r1.Affiche();

@@ -7,7 +7,6 @@ using namespace std;
 
 #include "Diplome.hpp"
 
-
 class DoubleDiplome : public Diplome {
 
     private:

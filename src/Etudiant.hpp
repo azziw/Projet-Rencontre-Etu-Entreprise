@@ -15,6 +15,9 @@ class RendezVous;
 class InscriptionActuelle;
 class ExperiencePro;
 class Diplome;
+class Entreprise;
+class Date;
+class Heure;
 
 class Etudiant {
     private : 
@@ -24,12 +27,11 @@ class Etudiant {
         string adresse;
         string numeroTel;
         InscriptionActuelle* diplomeActuel;
-        vector<ExperiencePro *> listeExperience;
-        vector<RendezVous *> rendezVous;
-        vector<Diplome *> listeDiplomes;
+        vector<ExperiencePro *> ensExperience;
+        vector<RendezVous *> ensRendezVous;
+        vector<Diplome *> ensDiplomes;
 
     public: 
-        // Constructeur 
         Etudiant(int numEtu, string Nom, string Prenom, string Addr, string Telephone){
             numeroEtudiant = numEtu;
             nom = Nom;
@@ -38,17 +40,13 @@ class Etudiant {
             numeroTel = Telephone;
         }
 
-        // Ajout d'un Diplome 
         void addDiplome(Diplome* D);
-
-        // Ajout d'une experience
         void addExperience(ExperiencePro* E);
-
-        // Ajout d'un rendez vous
+        
+        void AfficheRdv();
+        bool checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* R);
-
         //getCV();
-
 
         int getNumeroEtudiant() const;
         string getNomEtudiant() const;
@@ -57,15 +55,13 @@ class Etudiant {
         string getNumeroTel() const;
         InscriptionActuelle getDiplomeActuel() const;
 
+        void setRendezVous(Entreprise* etu, Date* date, Heure* heureDebut, Heure* heureFin);
         void setNumeroEtudiant(int num);
         void setNomEtudiant(string Nom);
         void setPrenomEtudiant(string Prenom);
         void setAdresseEtudiant(string Adresse);
         void setNumeroTel(string tel);
         void setDiplomeActuel(InscriptionActuelle* Inscription);
-
-        
-
 };
 
 #endif
