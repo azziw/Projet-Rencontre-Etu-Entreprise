@@ -40,13 +40,42 @@ RendezVous* Entreprise::checkDispo(RendezVous* rdv)
 
 void Entreprise::addRendezVous(RendezVous* rdv)
 {
-    if(checkDispo(rdv))
+
+    cout << endl;
+
+    if(checkDispo(rdv) == nullptr)
     {
+        cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
         ensRendezVous.push_back(rdv);
     }
     else
     {
         cerr << "Impossible d'ajouter ce rendez-vous, le créneau n'est pas disponible." << endl;
+    }
+}
+
+void Entreprise::removeRendezVous(RendezVous* rdv)
+{
+
+    cout << endl;
+
+    if(checkDispo(rdv) == nullptr)
+    {
+        cerr << "Le rendez-vous entre " << rdv->toString() << " n'est pas programmé pour " << nom << endl; 
+    }
+    else
+    {
+        vector<RendezVous*>::iterator iT;
+
+        for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
+        {
+            if((*iT) == rdv)
+            {
+                ensRendezVous.erase(iT);
+                cout << "Le rendez-vous " << rdv->toString() << " a été supprimé avec succès." << endl;
+                return;
+            }
+        }
     }
 }
 
@@ -72,6 +101,8 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
         "Veuillez Réessayer!" << endl;
     }
 }
+
+
 
 void Entreprise::AfficheRdv()
 {

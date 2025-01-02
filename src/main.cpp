@@ -33,10 +33,15 @@ int main() {
     // h1.Affiche();
     // cout<< h1.tempsTotal() << endl;
 
-    ent1.setRendezVous(&etu1, &date1, &heureDebut, &heureFin);
-    ent1.AfficheRdv();
+    // ent1.setRendezVous(&etu1, &date1, &heureDebut, &heureFin);
+    // ent1.AfficheRdv();
 
-    ent1.setRendezVous(&etu1, &date1, &heureDebut2, &heureFin2); 
+    // ent1.setRendezVous(&etu1, &date1, &heureDebut2, &heureFin2); 
+    ent1.addRendezVous(&r1);
+    ent1.AfficheRdv();  
+
+    ent1.removeRendezVous(&r1);
+
     ent1.AfficheRdv();  
     
     
