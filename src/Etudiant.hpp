@@ -47,6 +47,7 @@ class Etudiant {
         RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* R);
         void removeRendezVous(RendezVous* rdv);
+        bool checkExistence(RendezVous* rdv);
         //getCV();
 
         int getNumeroEtudiant() const;

@@ -33,6 +33,7 @@ class Entreprise
         RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* rdv);
         void removeRendezVous(RendezVous* rdv);
+        bool checkExistence(RendezVous* rdv);
 
         string getNom() const;
         string getAdresse() const;

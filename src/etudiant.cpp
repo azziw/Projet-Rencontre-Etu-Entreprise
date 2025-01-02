@@ -76,6 +76,21 @@ void Etudiant::addRendezVous(RendezVous* rdv)
 }
 
 
+bool Etudiant::checkExistence(RendezVous* rdv)
+{
+    vector<RendezVous*>::iterator iT;
+
+    for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
+    {
+        if((*iT) == rdv)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 void Etudiant::setRendezVous(Entreprise* ent, Date* date, Heure* heureDebut, Heure* heureFin)
 {
     RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, this, ent);
@@ -91,6 +106,15 @@ void Etudiant::removeRendezVous(RendezVous* rdv)
     cout << endl;
 
     RendezVous* conflitEtu = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'etudiant
+    bool exist = checkExistence(rdv); //permet de vérifier si le rendez-vous existe dans la liste de rendez-vous
+
+
+    //si il n'existe pas, c'est qu'on essaie de supprier un rendez-vous qui n'as jamais été ajouté.
+    if(!exist)
+    {
+        cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", celui-ci n'existe pas pour " << nom << endl;
+        return;
+    }
 
     //Si on trouve ne trouve pas le rendez-vous
     if(conflitEtu == nullptr)
