@@ -32,7 +32,7 @@ class Entreprise
         void AfficheRdv();
         RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* rdv);
-        void removeRendezVous(RendezVous* rdv);
+        void removeRendezVous(RendezVous* rdv, bool call = false);
         bool checkExistence(RendezVous* rdv);
 
         string getNom() const;

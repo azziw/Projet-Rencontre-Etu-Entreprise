@@ -101,13 +101,14 @@ void Etudiant::setRendezVous(Entreprise* ent, Date* date, Heure* heureDebut, Heu
 }
 
 
-void Etudiant::removeRendezVous(RendezVous* rdv)
+void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
 {
     cout << endl;
 
+    Entreprise* entrepriseConcerne = rdv->getEntreprise();
+
     RendezVous* conflitEtu = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'etudiant
     bool exist = checkExistence(rdv); //permet de vérifier si le rendez-vous existe dans la liste de rendez-vous
-
 
     //si il n'existe pas, c'est qu'on essaie de supprier un rendez-vous qui n'as jamais été ajouté.
     if(!exist)
@@ -132,13 +133,14 @@ void Etudiant::removeRendezVous(RendezVous* rdv)
             {
                 ensRendezVous.erase(iT);
                 cout << "Le rendez-vous " << rdv->toString() << " a été supprimé de " << nom << " avec succès." << endl;
+                if(called != true)
+                {
+                    entrepriseConcerne->removeRendezVous(rdv, true); // On enlève aussi le rendez-vous pour l'entreprise
+                }
                 return;
             }
         }
     }
-
-    Entreprise* entrepriseConcerne = rdv->getEntreprise();
-    entrepriseConcerne->removeRendezVous(rdv); // On enlève aussi le rendez-vous pour l'entreprise
 }
 
 

@@ -20,7 +20,6 @@ int main() {
     Heure heureDebut2(9,45);
     Heure heureFin2(11,00);
 
-
     Etudiant etu1(2, "azzi", "william", "adresse", "0606060606");
     Entreprise ent1("entreprise", "adresse", "contact", "06060606");
 
@@ -28,7 +27,7 @@ int main() {
     Heure h1(1, 2);
 
     RendezVous r1(&date1, &heureDebut, &heureFin, &etu1, &ent1);
-    RendezVous r2(&date1, &heureDebut, &heureFin, &etu1, &ent1);
+    RendezVous r2(&date2, &heureDebut, &heureFin, &etu1, &ent1);
 
     // h1.Affiche();
     // cout<< h1.tempsTotal() << endl;
@@ -45,7 +44,9 @@ int main() {
     // ent1.AfficheRdv();  
     etu1.AfficheRdv();
 
-    ent1.removeRendezVous(&r2);
+    ent1.removeRendezVous(&r1);
+
+    etu1.AfficheRdv();
     
     
     // r1.Affiche();
