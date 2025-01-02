@@ -2,23 +2,23 @@
 #include <string>
 #include <vector>
 
-#include "etudiant.hpp"
+#include "Etudiant.hpp"
 #include "ExperiencePro.hpp"
 
 using namespace std;
 
 // Ajout d'un diplome
-void Etudiant::addDiplome(Diplome D){
+void Etudiant::addDiplome(Diplome* D){
     listeDiplomes.push_back(D);
 }
 
 // Ajout d'une Experience
-void Etudiant::addExperience(ExperiencePro E){
+void Etudiant::addExperience(ExperiencePro* E){
     listeExperience.push_back(E);
 }
 
 // Ajout d'un Rendez-Vous
-void Etudiant::addRendezVous(RendezVous R){
+void Etudiant::addRendezVous(RendezVous* R){
     rendezVous.push_back(R);
 };
 

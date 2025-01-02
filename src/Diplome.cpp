@@ -3,13 +3,11 @@
 using namespace std;
 
 #include "Diplome.hpp"
+#include "Date.hpp"
 
 void Diplome::afficher() const {
 
-    char dateStr[11];  // Format "YYYY-MM-DD"
-    strftime(dateStr, sizeof(dateStr), "%Y-%m-%d", &dateObtention);
-
-    cout << "Diplome: " << nomNational << ", Code: " << Code << ", Date: " << dateStr << ", Lieu: " << lieuObtention << endl;
+    cout << "Diplome: " << nomNational << ", Code: " << Code << ", Date: " << dateObtention->toString() << ", Lieu: " << lieuObtention << endl;
 }
 
 string Diplome::getCode() const {
@@ -20,8 +18,8 @@ string Diplome::getNom() const {
     return nomNational;
 };
 
-tm Diplome::getDate() const {
-    return dateObtention;
+Date Diplome::getDate() const {
+    return *dateObtention;
 };
 
 string Diplome::getLieu() const {
@@ -36,7 +34,7 @@ void Diplome::setNom(string nom) {
     nomNational = nom;
 }
 
-void Diplome::setDate(tm date) {
+void Diplome::setDate(Date* date) {
     dateObtention = date;
 }
 

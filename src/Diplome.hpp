@@ -5,17 +5,17 @@
 
 using namespace std;
 
+class Date;
+
 class Diplome {
     private:
         string Code;
         string nomNational;
-        tm dateObtention;
+        Date* dateObtention;
         string lieuObtention;
 
     public:
-        Diplome(){} //Constructeur par défaut
-
-        Diplome(string code, string nom, tm date, string lieu)
+        Diplome(string code, string nom, Date* date, string lieu)
         {
             Code = code;
             nomNational = nom;
@@ -27,12 +27,12 @@ class Diplome {
         virtual void afficher() const;
         string getCode() const;
         string getNom() const;
-        tm getDate() const;
+        Date getDate() const;
         string getLieu() const;
 
         void setCode(string code);
         void setNom(string nom);
-        void setDate(tm date);
+        void setDate(Date* date);
         void setLieu(string lieu);
 };
 
