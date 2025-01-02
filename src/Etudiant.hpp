@@ -7,7 +7,10 @@
 
 using namespace std;
 
-//on fait des déclarations anticipées pour éviter des inclusions circulaires entre etudiant.hpp et rendezVous.hpp
+#include "Diplome.hpp"
+#include "InscriptionActuelle.hpp"
+
+//on fait des déclarations anticipées pour éviter des inclusions circulaires
 class RendezVous;
 class InscriptionActuelle;
 class ExperiencePro;
@@ -59,7 +62,7 @@ class Etudiant {
         void setPrenomEtudiant(string Prenom);
         void setAdresseEtudiant(string Adresse);
         void setNumeroTel(string tel);
-        void setDiplomeActuel(InscriptionActuelle Inscription);
+        void setDiplomeActuel(InscriptionActuelle* Inscription);
 
         
 

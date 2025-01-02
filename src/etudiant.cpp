@@ -4,11 +4,10 @@
 
 #include "Etudiant.hpp"
 #include "ExperiencePro.hpp"
-#include "Diplome.hpp"
 
 using namespace std;
 
-// Ajout d'un diplome
+// Ajout d'un diplome 
 void Etudiant::addDiplome(Diplome* D){
     listeDiplomes.push_back(D);
 }
@@ -53,7 +52,7 @@ string Etudiant::getNumeroTel() const{
 }
 
 InscriptionActuelle Etudiant::getDiplomeActuel() const{
-    return diplomeActuel;
+    return *diplomeActuel;
 }
 
 void Etudiant::setNumeroEtudiant(int num){
@@ -76,6 +75,6 @@ void Etudiant::setNumeroTel(string tel){
     numeroTel = tel;
 }
 
-void Etudiant::setDiplomeActuel(InscriptionActuelle Inscription){
+void Etudiant::setDiplomeActuel(InscriptionActuelle* Inscription){
     diplomeActuel = Inscription;
 }
