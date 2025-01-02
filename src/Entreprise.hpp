@@ -40,6 +40,7 @@ class Entreprise
         
         void addRendezVous(RendezVous* rdv);
         void setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin);
+        void AfficheRdv();
         bool checkDispo(RendezVous* rdv);
 };
 

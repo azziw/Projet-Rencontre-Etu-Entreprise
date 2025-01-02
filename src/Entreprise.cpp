@@ -57,6 +57,18 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
     }
 }
 
+void Entreprise::AfficheRdv()
+{
+    vector<RendezVous *>::iterator iT;
+
+    cout << "L'entreprise " << nom << " a les rendez-vous suivants:" << endl;
+
+    for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
+    {
+        (*iT)->Affiche();
+    }
+}
+
 string Entreprise::getNom() const
 {
     return nom;

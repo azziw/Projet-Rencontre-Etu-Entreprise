@@ -30,6 +30,8 @@ int main() {
     cout<< h1.tempsTotal() << endl;
 
     ent1.addRendezVous(&r1);
+    ent1.AfficheRdv();
+    
     
     // r1.Affiche();
 

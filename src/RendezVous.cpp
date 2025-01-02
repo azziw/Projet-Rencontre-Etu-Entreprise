@@ -10,7 +10,7 @@ using namespace std;
 
 void RendezVous::Affiche()
 {
-    cout << "Rendez-Vous entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " Le " << date->toString() << " de" << heureDebut->toString() << " à " << heureFin->toString() << endl;
+    cout << "Rdv entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " le " << date->toString() << " de " << heureDebut->toString() << " à " << heureFin->toString() << endl;
 }
 
 Date RendezVous::getDate() const
