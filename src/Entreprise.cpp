@@ -3,6 +3,10 @@
 using namespace std;
 
 #include "Entreprise.hpp"
+#include "RendezVous.hpp"
+#include "Date.hpp"
+#include "Heure.hpp"
+#include "Etudiant.hpp"
 
 bool Entreprise::checkDispo(RendezVous* rdv)
 {
@@ -45,7 +49,7 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
     if(checkDispo(rdv))
     {
         ensRendezVous.push_back(rdv);
-        etu->addRendezVous(*rdv);   
+        etu->addRendezVous(rdv);   
     }
     else
     {

@@ -3,10 +3,14 @@
 using namespace std;
 
 #include "RendezVous.hpp"
+#include "Etudiant.hpp"
+#include "Entreprise.hpp"
+#include "Date.hpp"
+#include "Heure.hpp"
 
 void RendezVous::Affiche()
 {
-    cout << "Rendez-Vous entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " Le " << date << " de" << heureDebut << " à " << heureFin << endl;
+    cout << "Rendez-Vous entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " Le " << date->toString() << " de" << heureDebut->toString() << " à " << heureFin->toString() << endl;
 }
 
 Date RendezVous::getDate() const

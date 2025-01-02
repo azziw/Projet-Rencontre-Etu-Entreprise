@@ -2,34 +2,35 @@
 #include <ctime>
 // #include "Diplome.hpp"
 // #include "DoubleDiplome.hpp"
-// #include "RendezVous.hpp"
-#include "Date.cpp"
-#include "Heure.cpp"
+#include "RendezVous.hpp"
+#include "Date.hpp"
+#include "Heure.hpp"
 #include "Entreprise.hpp"
+#include "Etudiant.hpp"
 
 int main() {
     // Création de deux diplômes
-    // tm date = {};
-    // date.tm_year = 120;  // 2020
-    // date.tm_mon = 5;     // Juin
-    // date.tm_mday = 15;
-
     // Diplome d1("D001", "Math", date, "Paris");
     // Diplome d2("D002", "Informatique", date, "Lyon");
 
-    // Etudiant e1(2, "azzi", "william", "adresse", "0606060606");
+    Date date1(2022, 8, 2);
+    Date date2(2023, 3 ,3);
+    Heure heureDebut(10, 9);
+    Heure heureFin(9,40);
+
+    Etudiant etu1(2, "azzi", "william", "adresse", "0606060606");
     Entreprise ent1("entreprise", "adresse", "contact", "06060606");
 
-    Date date1(2022, 01, 3);
+    // Date date1(2022, 01, 3);
     Heure h1(1, 2);
+
+    RendezVous r1(&date1, &heureDebut, &heureFin, &etu1, &ent1);
 
     h1.Affiche();
     cout<< h1.tempsTotal() << endl;
 
-
-
-    // RendezVous r1(date, date, date, &e1, &ent1);
-
+    ent1.addRendezVous(&r1);
+    
     // r1.Affiche();
 
     // Création d'un DoubleDiplome
