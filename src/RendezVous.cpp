@@ -18,29 +18,29 @@ string RendezVous::toString()
     return etudiant->getNomEtudiant() + " et " + entreprise->getNom() + " le " + date->toString() + " de " + heureDebut->toString() + " à " + heureFin->toString();
 }
 
-Date RendezVous::getDate() const
+Date* RendezVous::getDate() const
 {
-    return *date;
+    return date;
 }
 
-Heure RendezVous::getHeureDebut() const
+Heure* RendezVous::getHeureDebut() const
 {
-    return *heureDebut;
+    return heureDebut;
 }
 
-Heure RendezVous::getHeureFin() const
+Heure* RendezVous::getHeureFin() const
 {
-    return *heureFin;
+    return heureFin;
 }
 
-Etudiant RendezVous::getEtudiant() const
+Etudiant* RendezVous::getEtudiant() const
 {
-    return *etudiant;
+    return etudiant;
 }
 
-Entreprise RendezVous::getEntreprise() const
+Entreprise* RendezVous::getEntreprise() const
 {
-    return *entreprise;
+    return entreprise;
 }
 
 void RendezVous::setDate(Date* Date)

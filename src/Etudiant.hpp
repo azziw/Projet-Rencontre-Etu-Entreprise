@@ -44,7 +44,7 @@ class Etudiant {
         void addExperience(ExperiencePro* E);
         
         void AfficheRdv();
-        bool checkDispo(RendezVous* rdv);
+        RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* R);
         //getCV();
 

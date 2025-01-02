@@ -31,11 +31,11 @@ class RendezVous
             entreprise = ent;
         }
 
-        Date getDate() const;
-        Heure getHeureDebut() const;
-        Heure getHeureFin() const;
-        Etudiant getEtudiant() const;
-        Entreprise getEntreprise() const;
+        Date* getDate() const;
+        Heure* getHeureDebut() const;
+        Heure* getHeureFin() const;
+        Etudiant* getEtudiant() const;
+        Entreprise* getEntreprise() const;
 
         void setDate(Date* Date);
         void setHeureDebut(Heure* HeureD);

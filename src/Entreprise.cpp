@@ -35,22 +35,41 @@ RendezVous* Entreprise::checkDispo(RendezVous* rdv)
     return nullptr;
 }
 
-
-// AJOUTER AUSSI A ETUDIANT ?? SINON EXPLIQUER POURQUOI ON NE LE FAIT PAS (DEJA LE CAS VIA SETRDV)
-
 void Entreprise::addRendezVous(RendezVous* rdv)
 {
+    RendezVous* conflitEnt = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'entreprise
+
+    Etudiant* etudiantConcerne = rdv->getEtudiant();
+    RendezVous* conflitEtu = etudiantConcerne->checkDispo(rdv); // On regarde si il y a un conflit avec l'etudiant concerné
 
     cout << endl;
 
-    if(checkDispo(rdv) == nullptr)
+    //Si il n'y a pas de conflit pour l'entreprise
+    if(conflitEnt == nullptr)
     {
-        cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
-        ensRendezVous.push_back(rdv);
+        //Si il n'y a pas de conflit pour l'etudiant concerne
+        if(conflitEtu == nullptr)
+        {
+            cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
+            ensRendezVous.push_back(rdv);
+            etudiantConcerne->addRendezVous(rdv);
+        }
+        //Si il n'y a pas de conflit pour l'entreprise mais qu'il y en a un pour l'etudiant
+        else
+        {
+            cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << rdv->getDate()->toString() << " de " <<
+            rdv->getHeureDebut()->toString() << " à " << rdv->getHeureFin()->toString() << " n'est pas disponible." << endl <<
+            "Celui-ci est en conflit avec le rdv de: " << conflitEtu->toString() << endl << //erreur on affiche que le créneau n'est pas dispo
+            "Veuillez Réessayer!" << endl;
+        }
     }
+    //Si il y a un conflit pour l'entreprise
     else
     {
-        cerr << "Impossible d'ajouter ce rendez-vous, le créneau n'est pas disponible." << endl;
+        cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << rdv->getDate()->toString() << " de " <<
+        rdv->getHeureDebut()->toString() << " à " << rdv->getHeureFin()->toString() << " n'est pas disponible." << endl <<
+        "Celui-ci est en conflit avec le rdv de: " << conflitEnt->toString() << endl << //erreur on affiche que le créneau n'est pas dispo
+        "Veuillez Réessayer!" << endl;
     }
 }
 
@@ -61,7 +80,7 @@ void Entreprise::removeRendezVous(RendezVous* rdv)
 
     if(checkDispo(rdv) == nullptr)
     {
-        cerr << "Le rendez-vous entre " << rdv->toString() << " n'est pas programmé pour " << nom << endl; 
+        cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", il n'est pas programmé pour " << nom << endl; 
     }
     else
     {
@@ -85,23 +104,8 @@ void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heu
 
     cout << endl;
 
-    RendezVous* conflitRdv = checkDispo(rdv); //On stocke le rdv pour l'afficher en cas de conflit
-
-    if(conflitRdv == nullptr)
-    {
-        cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << endl;
-        ensRendezVous.push_back(rdv);
-        etu->addRendezVous(rdv);   
-    }
-    else
-    {
-        cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << date->toString() << " de " <<
-        heureDebut->toString() << " à " << heureFin->toString() << " n'est pas disponible." << endl <<
-        "Celui-ci est en conflit avec le rdv de: " << conflitRdv->toString() << endl << //erreur on affiche que le créneau n'est pas dispo
-        "Veuillez Réessayer!" << endl;
-    }
+    addRendezVous(rdv);
 }
-
 
 
 void Entreprise::AfficheRdv()
@@ -109,11 +113,20 @@ void Entreprise::AfficheRdv()
     vector<RendezVous *>::iterator iT;
 
     cout << endl;
-    cout << "L'entreprise " << nom << " a les rendez-vous suivants:" << endl;
 
-    for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
+    //Si l'ensemble est vide on ne le parcours pas.
+    if (ensRendezVous.empty())
     {
-        (*iT)->Affiche();
+        cout << "Aucun rendez-vous n'est planifié pour l'entreprise " << nom << endl;
+    }
+    else
+    {
+        cout << "L'entreprise " << nom << " a les rendez-vous suivants:" << endl;
+
+        for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
+        {
+            (*iT)->Affiche();
+        }
     }
 }
 

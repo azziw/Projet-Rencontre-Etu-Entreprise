@@ -40,7 +40,7 @@ int main() {
     ent1.addRendezVous(&r1);
     ent1.AfficheRdv();  
 
-    ent1.removeRendezVous(&r1);
+    ent1.removeRendezVous(&r2);
 
     ent1.AfficheRdv();  
     
