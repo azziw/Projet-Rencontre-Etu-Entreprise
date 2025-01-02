@@ -1,3 +1,6 @@
+#ifndef ETUDIANTDEUXIEMECYCLE_HPP
+#define ETUDIANTDEUXIEMECYCLE_HPP
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,13 +9,14 @@
 
 using namespace std;
 
-
 class EtudiantDeuxiemeCycle : public Etudiant {
     string NomDisciplinePrincipale;
 
     public:
         // Constructeur
-        EtudiantDeuxiemeCycle(string NomDiscipline){
+        EtudiantDeuxiemeCycle(int numEtu, string Nom, string Prenom, string Addr, string Telephone, string NomDiscipline)
+            : Etudiant(numEtu, Nom, Prenom, Addr, Telephone)
+        {
             NomDisciplinePrincipale = NomDiscipline;
         }
 
@@ -21,3 +25,5 @@ class EtudiantDeuxiemeCycle : public Etudiant {
         void setNomDiscipline(string nom);
 
 };
+
+#endif

@@ -1,11 +1,13 @@
-# include <iostream>
+#ifndef ETUDIANTDEUXIEMECYCLE_HPP
+#define ETUDIANTDEUXIEMECYCLE_HPP
+
+#include <iostream>
 #include <string>
 #include <vector>
 
-#include "etudiant.hpp"
+#include "Etudiant.hpp"
 
 using namespace std;
-
 
 class EtudiantPremierCycle : public Etudiant {
     string SerieBac;
@@ -13,8 +15,9 @@ class EtudiantPremierCycle : public Etudiant {
     string lieuObtentionBac;
 
     public: 
-        // Constructeur
-        EtudiantPremierCycle(string Serie,string annee,string lieu){
+        EtudiantPremierCycle(int numEtu, string Nom, string Prenom, string Addr, string Telephone, string Serie, string annee, string lieu) 
+            : Etudiant(numEtu, Nom, Prenom, Addr, Telephone)
+        {
             SerieBac = Serie;
             anneeObtentionBac = annee;
             lieuObtentionBac = lieu;
@@ -29,3 +32,5 @@ class EtudiantPremierCycle : public Etudiant {
         void setLieuBac(string Lieu);
 
 };
+
+#endif
