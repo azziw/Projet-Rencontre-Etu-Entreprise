@@ -7,12 +7,12 @@ using namespace std;
 
 Diplome InscriptionActuelle::getDiplome() const
 {
-    return diplome;
+    return *diplome;
 }
 
-tm InscriptionActuelle::getDate() const
+Date InscriptionActuelle::getDate() const
 {
-    return datePremiereInscription;
+    return *datePremiereInscription;
 }
 
 int InscriptionActuelle::getAnnee() const 
@@ -20,13 +20,13 @@ int InscriptionActuelle::getAnnee() const
     return numeroAnnee;
 }
 
-void InscriptionActuelle::setDiplome(Diplome nouveauDiplome)
+void InscriptionActuelle::setDiplome(Diplome* nouveauDiplome)
 {
     diplome = nouveauDiplome;
     // FAIRE ETUDIANT MISE A JOUR
 }
 
-void InscriptionActuelle::setDate(tm date)
+void InscriptionActuelle::setDate(Date* date)
 {
     datePremiereInscription = date;
 }
