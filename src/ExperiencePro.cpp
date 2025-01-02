@@ -6,18 +6,12 @@ using namespace std;
 
 #include "ExperiencePro.hpp"
 
-// Ajout d'un diplome
-void ExperiencePro::addEtudiant(Etudiant etu){
-    listeExperience.push_back(etu);
-    etu->listeExperience.push_back(this); 
+Date ExperiencePro::getDateDebut() const{
+    return *dateDebut;
 }
 
-date ExperiencePro::getDateDebut() const{
-    return dateDebut;
-}
-
-date ExperiencePro::getDateFin() const{
-    return dateFin;
+Date ExperiencePro::getDateFin() const{
+    return *dateFin;
 }
 
 string ExperiencePro::getNomEnt() const{
@@ -29,14 +23,14 @@ string ExperiencePro::getFonction() const{
 }
 
 Etudiant ExperiencePro::getEtudiant() const{
-    return etudiant;
+    return *etudiant;
 }
 
-void ExperiencePro::setDateDebut(date d){
+void ExperiencePro::setDateDebut(Date* d){
     dateDebut = d;
 }
 
-void ExperiencePro::setDateFin(date d){
+void ExperiencePro::setDateFin(Date* d){
     dateFin = d;
 }
 
@@ -48,6 +42,7 @@ void ExperiencePro::setFonction(string fonc){
     fonctionOccupee = fonc;
 }
 
-void ExperiencePro::setEtudiant(Etudiant etu){
+void ExperiencePro::setEtudiant(Etudiant* etu){
     etudiant = etu;
+    etu->addExperience(this);
 }

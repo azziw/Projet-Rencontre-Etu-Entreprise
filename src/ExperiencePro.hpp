@@ -4,16 +4,19 @@
 
 using namespace std;
 
+#include "Etudiant.hpp"
+#include "Date.hpp"
+
 class ExperiencePro {
-    date dateDebut;
-    date dateFin;
+    Date* dateDebut;
+    Date* dateFin;
     string nomEntreprise;
     string fonctionOccupee;
-    Etudiant etudiant;
+    Etudiant* etudiant;
 
     public : 
         //Constructeur
-        ExperiencePro(date deb, date fin, string nomEnt, string fonc,Etudiant etu){
+        ExperiencePro(Date* deb, Date* fin, string nomEnt, string fonc, Etudiant* etu){
             dateDebut = deb;
             dateFin = fin;
             nomEntreprise = nomEnt;
@@ -21,22 +24,16 @@ class ExperiencePro {
             etudiant = etu;
         }
 
-        // Ajout d'un etudiant 
-        void addEtudiant(Etudiant etu);
-
-        date getDateDebut() const;
-        date getDateFin() const;
+        Date getDateDebut() const;
+        Date getDateFin() const;
         string getNomEnt() const;
         string getFonction() const;
         Etudiant getEtudiant() const;
 
-        void setDateDebut(date d);
-        void setDateFin(date d);
+        void setDateDebut(Date* d);
+        void setDateFin(Date* d);
         void setNomEnt(string nom);
         void setFonction(string fonc);
-        void setEtudiant(Etudiant etu);
+        void setEtudiant(Etudiant* etu);
 
-
-
-
-}
+};

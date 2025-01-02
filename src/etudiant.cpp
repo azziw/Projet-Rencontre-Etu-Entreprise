@@ -4,6 +4,7 @@
 
 #include "Etudiant.hpp"
 #include "ExperiencePro.hpp"
+#include "Diplome.hpp"
 
 using namespace std;
 
