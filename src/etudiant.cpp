@@ -59,7 +59,7 @@ void Etudiant::addRendezVous(RendezVous* rdv)
             ensRendezVous.push_back(rdv);
             entrepriseConcerne->addRendezVous(rdv);
         }
-        //Si il n'y a pas de conflit pour l'etudiant mais qu'il y en a un pour l'entreprise
+        //Si il n'y a pas de confl it pour l'etudiant mais qu'il y en a un pour l'entreprise
         else
         {
             cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
@@ -220,6 +220,7 @@ void Etudiant::AfficheExperiences() const
 
 void Etudiant::AfficheCv() const
 {
+    cout << endl;
     cout << "\033[4mCV de " << nom << " " << prenom << " etudiant n°" << numeroEtudiant << ":\033[0m" << endl;
     cout << endl;
     cout << "\033[4mInformations Administratives:\033[0m" << endl;

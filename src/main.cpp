@@ -19,8 +19,11 @@ int main() {
 
     Date date1(2, 8, 2019);
     Date date2(3, 8 ,2019); 
+    Date date3(4, 8, 2019);
     Heure heureDebut(9, 30);
+    Heure heureDebut3(8, 00);
     Heure heureFin(10,00);
+    Heure heureFin3(9,00);
     Heure heureDebut2(8,00);
     Heure heureFin2(9,00);
 
@@ -48,10 +51,20 @@ int main() {
     ent1.addRendezVous(&r1);
     ent1.addRendezVous(&r2);
 
+    etu4.setRendezVous(&ent1, &date3, &heureDebut3, &heureFin3);
+
+    etu1.AfficheRdv();
+
     gestion.addEntreprise(&ent1);
     gestion.addEntreprise(&ent2);
 
     gestion.AfficheRdv();
+
+    etu4.addExperience(&ep1);
+
+    etu4.AfficheCv();
+
+    etu4.AfficheExperiences();
 
 
 
