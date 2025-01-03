@@ -17,11 +17,11 @@ int main() {
     // Diplome d2("D002", "Informatique", date, "Lyon");
 
     Date date1(2, 8, 2019);
-    Date date2(2, 8 ,2019); 
+    Date date2(3, 8 ,2019); 
     Heure heureDebut(9, 30);
     Heure heureFin(10,00);
-    Heure heureDebut2(10,00);
-    Heure heureFin2(11,00);
+    Heure heureDebut2(8,00);
+    Heure heureFin2(9,00);
 
     Diplome d1("D001", "Licence", &date1, "Limoges");
     Diplome d2("D003", "BUT", &date2, "Limoges");
@@ -33,7 +33,7 @@ int main() {
     Entreprise ent1("Thales", "18 rue du pigeon", "jean", "06060606");
     Entreprise ent2("auchan", "adresse", "contact", "06060606");
 
-    EtudiantPremierCycle etu4(34890, "Jean", "Michel", "94 chemin romain", "0606060606", &ins1, "BAC S", "2021", "Lyon");
+    EtudiantPremierCycle etu4(34890, "Jean", "Jean", "94 chemin romain", "0606060606", &ins1, "BAC S", "2021", "Lyon");
     EtudiantDeuxiemeCycle etu3(34890, "Jean", "Michel", "94 chemin romain", "0606060606", &ins1, "Informatique");
 
     // Date date1(2022, 01, 3);

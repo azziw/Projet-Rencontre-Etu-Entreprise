@@ -159,7 +159,14 @@ void Etudiant::AfficheRdv()
     }
     else
         {
-        cout << "L'etudiant " << nom << " a les rendez-vous suivants:" << endl;
+        if(nom == prenom) //en cas d'homonyme on affiche aussi le numéro d'étudiant
+        {
+            cout << "L'etudiant "  << nom << " " << prenom << " n° " << numeroEtudiant << " a les rendez-vous suivants:" << endl;
+        }
+        else
+        {
+            cout << "L'etudiant " << nom << " " << prenom << " a les rendez-vous suivants:" << endl;
+        }
 
         sort(ensRendezVous.begin(), ensRendezVous.end(), [](RendezVous* a, RendezVous* b) {
             return *a < *b;
