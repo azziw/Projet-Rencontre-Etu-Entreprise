@@ -145,7 +145,6 @@ void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
 }
 
 
-
 void Etudiant::AfficheRdv()
 {
     vector<RendezVous *>::iterator iT;
@@ -158,7 +157,7 @@ void Etudiant::AfficheRdv()
         cout << "Aucun rendez-vous n'est planifié pour l'etudiant " << nom << endl;
     }
     else
-        {
+    {
         if(nom == prenom) //en cas d'homonyme on affiche aussi le numéro d'étudiant
         {
             cout << "L'etudiant "  << nom << " " << prenom << " n° " << numeroEtudiant << " a les rendez-vous suivants:" << endl;

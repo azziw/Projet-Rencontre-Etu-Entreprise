@@ -154,6 +154,10 @@ void Entreprise::AfficheRdv()
     {
         cout << "L'entreprise " << nom << " a les rendez-vous suivants:" << endl;
 
+        sort(ensRendezVous.begin(), ensRendezVous.end(), [](RendezVous* a, RendezVous* b) {
+            return *a < *b;
+        });
+
         for(iT = ensRendezVous.begin(); iT != ensRendezVous.end(); iT++)
         {
             (*iT)->Affiche();
