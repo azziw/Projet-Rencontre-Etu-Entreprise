@@ -25,7 +25,8 @@ RendezVous* Entreprise::checkDispo(RendezVous* rdv)
                 return *iT;
             }
             //Si le rendez-vous que j'ajoute est a la même heure qu'un existant
-            if (*(*iT)->getHeureDebut() == *rdv->getHeureFin() && *rdv->getHeureDebut() == *(*iT)->getHeureFin()) 
+            // on suppose que les rendez-vous peuvent commencer à la même heure que lorsque l'un des rendez-vous se termine (ex: 10h-11h et 11h-12h)
+            if (*(*iT)->getHeureDebut() == *rdv->getHeureFin()) 
             {
                 return *iT;
             }

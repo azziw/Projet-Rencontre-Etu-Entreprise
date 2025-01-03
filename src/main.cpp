@@ -51,7 +51,7 @@ int main() {
 
 
     etu4.setRendezVous(&ent1, &date1, &heureDebut, &heureFin);
-    etu4.setRendezVous(&ent2, &date2, &heureDebut, &heureFin);
+    etu4.setRendezVous(&ent2, &date2, &heureDebut2, &heureFin2);
     etu4.AfficheRdv();
 
 
