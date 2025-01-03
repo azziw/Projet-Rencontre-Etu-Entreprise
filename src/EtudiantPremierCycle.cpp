@@ -9,7 +9,7 @@ using namespace std;
 
 void EtudiantPremierCycle::Affiche() const 
 {
-    Etudiant::Affiche(); cout << "Il a précédemment obtenu un bac " << SerieBac << " en " << anneeObtentionBac << " à " << lieuObtentionBac << endl;
+    Etudiant::Affiche(); cout << "Il a précédemment obtenu un " << SerieBac << " en " << anneeObtentionBac << " à " << lieuObtentionBac << endl;
 }
 
 string EtudiantPremierCycle::getSerie() const{

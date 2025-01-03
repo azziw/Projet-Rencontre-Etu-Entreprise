@@ -16,13 +16,14 @@ int main() {
     // Diplome d2("D002", "Informatique", date, "Lyon");
 
     Date date1(2021, 8, 2);
-    Date date2(2023, 3 ,3);
+    Date date2(2019, 3 ,3);
     Heure heureDebut(9, 30);
     Heure heureFin(10,00);
     Heure heureDebut2(9,45);
     Heure heureFin2(11,00);
 
     Diplome d1("D001", "Licence", &date1, "Limoges");
+    Diplome d2("D003", "BUT", &date2, "Limoges");
     InscriptionActuelle ins1(&d1, &date1, 3);
 
     Etudiant etu1(2, "azzi", "william", "94 chemin romain, Bagnols-sur-cèze", "0606060606", nullptr);
@@ -30,7 +31,7 @@ int main() {
     Entreprise ent1("Thales", "18 rue du pigeon", "jean", "06060606");
     Entreprise ent2("auchan", "adresse", "contact", "06060606");
 
-    EtudiantPremierCycle etu4(34890, "Jean", "Michel", "94 chemin romain", "0606060606", &ins1, "S", "2021", "Lyon");
+    EtudiantPremierCycle etu4(34890, "Jean", "Michel", "94 chemin romain", "0606060606", &ins1, "BAC S", "2021", "Lyon");
     EtudiantDeuxiemeCycle etu3(34890, "Jean", "Michel", "94 chemin romain", "0606060606", &ins1, "Informatique");
 
     // Date date1(2022, 01, 3);
@@ -39,8 +40,10 @@ int main() {
     RendezVous r1(&date1, &heureDebut, &heureFin, &etu1, &ent1);
     RendezVous r2(&date2, &heureDebut, &heureFin, &etu1, &ent1);
 
-    etu3.Affiche();
+    etu4.Affiche();
     cout << endl;
+    etu4.addDiplome(&d1);
+    etu4.addDiplome(&d2);
     etu4.AfficheCv();
 
 
