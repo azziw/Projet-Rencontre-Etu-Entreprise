@@ -24,6 +24,8 @@ class ExperiencePro {
             etudiant = etu;
         }
 
+        void Affiche() const;
+
         Date getDateDebut() const;
         Date getDateFin() const;
         string getNomEnt() const;

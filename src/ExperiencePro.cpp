@@ -6,6 +6,10 @@ using namespace std;
 
 #include "ExperiencePro.hpp"
 
+void ExperiencePro::Affiche() const{
+    cout << "Du " << dateDebut->toString() << " au " << dateFin->toString() << " : " << fonctionOccupee << " chez " << nomEntreprise << endl;
+}
+
 Date ExperiencePro::getDateDebut() const{
     return *dateDebut;
 }

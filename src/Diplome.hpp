@@ -24,7 +24,7 @@ class Diplome {
         }
 
 
-        virtual void afficher() const;
+        virtual void Affiche() const;
         string getCode() const;
         string getNom() const;
         Date getDate() const;

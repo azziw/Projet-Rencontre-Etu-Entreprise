@@ -40,7 +40,9 @@ int main() {
     RendezVous r2(&date2, &heureDebut, &heureFin, &etu1, &ent1);
 
     etu3.Affiche();
-    etu4.Affiche();
+    cout << endl;
+    etu4.AfficheCv();
+
 
     // ent1.addRendezVous(&r1);
     // ent1.AfficheRdv(); 

@@ -48,12 +48,15 @@ class Etudiant {
         void addExperience(ExperiencePro* E);
         
         void AfficheRdv();
+        virtual void AfficheCv() const;
+        virtual void Affiche() const; //méthode virtuelle car on dérive celle-ci dans les classes qui héritent de Etudiant.
+        virtual void AfficheDiplomes() const;
+        virtual void AfficheExperiences() const;
+
         RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* R);
         void removeRendezVous(RendezVous* rdv, bool called = false);
         bool checkExistence(RendezVous* rdv);
-        virtual void Affiche() const; //méthode virtuelle car on dérive celle-ci dans les classes qui héritent de Etudiant.
-        //getCV();
 
         int getNumeroEtudiant() const;
         string getNomEtudiant() const;

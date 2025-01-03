@@ -5,7 +5,7 @@ using namespace std;
 #include "Diplome.hpp"
 #include "Date.hpp"
 
-void Diplome::afficher() const {
+void Diplome::Affiche() const {
 
     cout << "Diplome: " << nomNational << ", Code: " << Code << ", Date: " << dateObtention->toString() << ", Lieu: " << lieuObtention << endl;
 }

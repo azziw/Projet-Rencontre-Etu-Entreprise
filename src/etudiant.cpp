@@ -175,6 +175,54 @@ void Etudiant::Affiche() const
     cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " << diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " année." << endl;
 }
 
+void Etudiant::AfficheDiplomes() const
+{
+    if(ensDiplomes.empty())
+    {
+        cout << "Aucun diplôme n'est enregistré pour cet étudiant." << endl;
+    }
+    else
+    {
+        for (Diplome* diplome : ensDiplomes)
+        {
+            diplome->Affiche();
+        }
+    }
+    cout << endl;
+}
+
+void Etudiant::AfficheExperiences() const
+{
+    if(ensExperience.empty())
+    {
+        cout << "Aucune expérience professionnelle n'est enregistrée pour cet étudiant." << endl;
+    }
+    else
+    {
+        for (ExperiencePro* experience : ensExperience)
+        {
+            experience->Affiche();
+        }
+    }
+    cout << endl;
+}
+
+void Etudiant::AfficheCv() const
+{
+    cout << "\033[4mCV de " << nom << " " << prenom << " etudiant n°" << numeroEtudiant << ":\033[0m" << endl;
+    cout << endl;
+    cout << "\033[4mInformations Administratives:\033[0m" << endl;
+    cout << "Adresse: " << adresse << endl;
+    cout << "Numéro de téléphone: " << numeroTel << endl;
+    cout << endl;
+    cout << "\033[4mDiplômes Obtenus:\033[0m" << endl;
+    this->AfficheDiplomes();
+    cout << endl;
+    cout << "\033[4mExpériences Professionnelles:\033[0m" << endl;
+    this->AfficheExperiences();
+    cout << endl;
+}
+
 
 // Ajout d'un diplome 
 void Etudiant::addDiplome(Diplome* D){
