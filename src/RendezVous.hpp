@@ -44,6 +44,8 @@ class RendezVous
         void setEntreprise(Entreprise* ent);
         void Affiche();
         string toString();
+
+        bool operator<(const RendezVous& other) const;
 };
 
 #endif

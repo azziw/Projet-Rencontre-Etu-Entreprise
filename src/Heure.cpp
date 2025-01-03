@@ -33,3 +33,7 @@ bool Heure::operator< (const Heure& heure2) const
 bool Heure::operator== (const Heure& heure2) const {
 return heures == heure2.heures && minutes == heure2.minutes;
 }
+
+bool Heure::operator!=(const Heure& heure2) const {
+    return !(*this == heure2); 
+}

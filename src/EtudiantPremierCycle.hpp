@@ -23,7 +23,7 @@ class EtudiantPremierCycle : public Etudiant {
             lieuObtentionBac = lieu;
 
             //On ajoute le bac à la liste de diplomes de l'étudiant
-            Date* date = new Date(stoi(annee), 1, 1);
+            Date* date = new Date(1, 1, stoi(annee));
             Diplome* bac = new Diplome("D001", Serie, date, lieu);
             this->addDiplome(bac);
         };

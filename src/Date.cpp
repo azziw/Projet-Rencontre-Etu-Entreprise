@@ -8,7 +8,7 @@ using namespace std;
 
 string Date::toString() const {
     stringstream s; // utilisé pour concatener les chaines correctement
-    s << setw(2) << setfill('0') << jour << "-" << setw(2) << setfill('0') << mois << "-" << setw(2) << setfill('0') << annee;
+    s << setw(2) << setfill('0') << jour << "/" << setw(2) << setfill('0') << mois << "/" << setw(2) << setfill('0') << annee;
     return s.str();
 }
 
@@ -40,4 +40,8 @@ bool Date::operator< (const Date& date2) const
 
 bool Date::operator== (const Date& date2) const {
     return annee == date2.annee && mois == date2.mois && jour == date2.jour;
+}
+
+bool Date::operator!=(const Date& date2) const {
+    return !(*this == date2); 
 }

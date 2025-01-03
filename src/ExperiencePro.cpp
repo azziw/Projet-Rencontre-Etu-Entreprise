@@ -10,12 +10,12 @@ void ExperiencePro::Affiche() const{
     cout << "Du " << dateDebut->toString() << " au " << dateFin->toString() << " : " << fonctionOccupee << " chez " << nomEntreprise << endl;
 }
 
-Date ExperiencePro::getDateDebut() const{
-    return *dateDebut;
+Date* ExperiencePro::getDateDebut() const{
+    return dateDebut;
 }
 
-Date ExperiencePro::getDateFin() const{
-    return *dateFin;
+Date* ExperiencePro::getDateFin() const{
+    return dateFin;
 }
 
 string ExperiencePro::getNomEnt() const{
@@ -26,8 +26,8 @@ string ExperiencePro::getFonction() const{
     return fonctionOccupee;
 }
 
-Etudiant ExperiencePro::getEtudiant() const{
-    return *etudiant;
+Etudiant* ExperiencePro::getEtudiant() const{
+    return etudiant;
 }
 
 void ExperiencePro::setDateDebut(Date* d){

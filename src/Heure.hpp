@@ -21,6 +21,7 @@ class Heure {
         int tempsTotal() const;
         bool operator< (const Heure& heure2) const;
         bool operator== (const Heure& heure2) const;
+        bool operator!= (const Heure& heure2) const;
 };
 
 #endif

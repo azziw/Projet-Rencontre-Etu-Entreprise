@@ -67,3 +67,8 @@ void RendezVous::setEntreprise(Entreprise* ent)
 {
     entreprise = ent;
 }
+
+bool RendezVous::operator<(const RendezVous& other) const {
+    if (*date != *other.date) return *date < *other.date;
+    return *heureDebut < *other.heureDebut;
+}

@@ -16,21 +16,20 @@ class ExperiencePro {
 
     public : 
         //Constructeur
-        ExperiencePro(Date* deb, Date* fin, string nomEnt, string fonc, Etudiant* etu){
+        ExperiencePro(Date* deb, Date* fin, string nomEnt, string fonc){
             dateDebut = deb;
             dateFin = fin;
             nomEntreprise = nomEnt;
             fonctionOccupee = fonc;
-            etudiant = etu;
         }
 
         void Affiche() const;
 
-        Date getDateDebut() const;
-        Date getDateFin() const;
+        Date* getDateDebut() const;
+        Date* getDateFin() const;
         string getNomEnt() const;
         string getFonction() const;
-        Etudiant getEtudiant() const;
+        Etudiant* getEtudiant() const;
 
         void setDateDebut(Date* d);
         void setDateFin(Date* d);

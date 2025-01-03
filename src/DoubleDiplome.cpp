@@ -6,7 +6,7 @@ using namespace std;
 
 void DoubleDiplome::afficher() const {
     cout << "Double Diplome:" << endl;
-    Diplome::afficher();
+    Diplome::Affiche();
 }
 
 Diplome DoubleDiplome::getDiplome1() const {
