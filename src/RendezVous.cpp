@@ -43,6 +43,11 @@ Entreprise* RendezVous::getEntreprise() const
     return entreprise;
 }
 
+Rencontre* RendezVous::getRencontre() const
+{
+    return rencontre;
+}
+
 void RendezVous::setDate(Date* Date)
 {
     date = Date;
@@ -66,6 +71,11 @@ void RendezVous::setEtudiant(Etudiant* etu)
 void RendezVous::setEntreprise(Entreprise* ent)
 {
     entreprise = ent;
+}
+
+void RendezVous::setRencontre(Rencontre* ren)
+{
+    rencontre = ren;
 }
 
 bool RendezVous::operator<(const RendezVous& other) const {

@@ -185,6 +185,11 @@ string Entreprise::getTelephoneContact() const
     return telephoneContact;
 }
 
+vector<RendezVous *> Entreprise::getRendezVous() const
+{
+    return ensRendezVous;
+}
+
 
 void Entreprise::setNom(string Nom)
 {

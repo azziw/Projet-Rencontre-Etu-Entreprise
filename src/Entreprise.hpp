@@ -39,6 +39,7 @@ class Entreprise
         string getAdresse() const;
         string getNomContact() const;
         string getTelephoneContact() const;
+        vector<RendezVous *> getRendezVous() const;
 
         void setNom(string Nom);
         void setAdresse(string Adresse);

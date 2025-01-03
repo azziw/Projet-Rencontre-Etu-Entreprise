@@ -8,6 +8,7 @@ class Entreprise;
 class Etudiant;
 class Date;
 class Heure;
+class Rencontre;
 
 using namespace std;
 
@@ -19,6 +20,7 @@ class RendezVous
         Heure* heureFin;
         Etudiant* etudiant;
         Entreprise* entreprise;
+        Rencontre* rencontre;
 
     public:
 
@@ -36,12 +38,14 @@ class RendezVous
         Heure* getHeureFin() const;
         Etudiant* getEtudiant() const;
         Entreprise* getEntreprise() const;
+        Rencontre* getRencontre() const;
 
         void setDate(Date* Date);
         void setHeureDebut(Heure* HeureD);
         void setHeureFin(Heure* HeureF);
         void setEtudiant(Etudiant* etu);
         void setEntreprise(Entreprise* ent);
+        void setRencontre(Rencontre* ren);
         void Affiche();
         string toString();
 

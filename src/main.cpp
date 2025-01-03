@@ -10,6 +10,7 @@
 #include "EtudiantPremierCycle.hpp"
 #include "EtudiantDeuxiemeCycle.hpp"
 #include "ExperiencePro.hpp"
+#include "GestionEntreprise.hpp"
 
 int main() {
     // Création de deux diplômes
@@ -31,7 +32,7 @@ int main() {
     Etudiant etu1(2, "azzi", "william", "94 chemin romain, Bagnols-sur-cèze", "0606060606", nullptr);
     Etudiant etu2(23, "azzou", "zoao", "dzd", "0606060606", &ins1);
     Entreprise ent1("Thales", "18 rue du pigeon", "jean", "06060606");
-    Entreprise ent2("auchan", "adresse", "contact", "06060606");
+    Entreprise ent2("Auchan", "adresse", "contact", "06060606");
 
     EtudiantPremierCycle etu4(34890, "Jean", "Jean", "94 chemin romain", "0606060606", &ins1, "BAC S", "2021", "Lyon");
     EtudiantDeuxiemeCycle etu3(34890, "Jean", "Michel", "94 chemin romain", "0606060606", &ins1, "Informatique");
@@ -40,19 +41,19 @@ int main() {
     Heure h1(1, 2);
 
     RendezVous r1(&date1, &heureDebut, &heureFin, &etu1, &ent1);
-    RendezVous r2(&date2, &heureDebut2, &heureFin2, &etu1, &ent1);
+    RendezVous r2(&date1, &heureDebut2, &heureFin2, &etu1, &ent1);
 
-    etu4.Affiche();
-    cout << endl;
-    etu4.addExperience(&ep1);
-    etu4.addDiplome(&d1);
-    etu4.addDiplome(&d2);
-    etu4.AfficheCv();
+    GestionEntreprise gestion;
+
+    ent1.addRendezVous(&r1);
+    ent1.addRendezVous(&r2);
+
+    gestion.addEntreprise(&ent1);
+    gestion.addEntreprise(&ent2);
+
+    gestion.AfficheRdv();
 
 
-    etu4.setRendezVous(&ent1, &date1, &heureDebut, &heureFin);
-    etu4.setRendezVous(&ent2, &date2, &heureDebut2, &heureFin2);
-    etu4.AfficheRdv();
 
 
     // ent1.addRendezVous(&r1);

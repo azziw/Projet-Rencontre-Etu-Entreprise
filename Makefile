@@ -5,7 +5,7 @@ TARGET = main
 SRCDIR = src
 
 # Fichiers sources dans le dossier src
-SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/Entreprise.cpp $(SRCDIR)/Heure.cpp $(SRCDIR)/RendezVous.cpp $(SRCDIR)/Etudiant.cpp $(SRCDIR)/Date.cpp $(SRCDIR)/EtudiantPremierCycle.cpp $(SRCDIR)/EtudiantDeuxiemeCycle.cpp $(SRCDIR)/InscriptionActuelle.cpp $(SRCDIR)/Diplome.cpp $(SRCDIR)/ExperiencePro.cpp
+SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/Entreprise.cpp $(SRCDIR)/Heure.cpp $(SRCDIR)/RendezVous.cpp $(SRCDIR)/Etudiant.cpp $(SRCDIR)/Date.cpp $(SRCDIR)/EtudiantPremierCycle.cpp $(SRCDIR)/EtudiantDeuxiemeCycle.cpp $(SRCDIR)/InscriptionActuelle.cpp $(SRCDIR)/Diplome.cpp $(SRCDIR)/ExperiencePro.cpp $(SRCDIR)/GestionEntreprise.cpp
 
 # Options de compilation
 CXX = g++
