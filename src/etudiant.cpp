@@ -170,7 +170,7 @@ void Etudiant::AfficheRdv()
 
 void Etudiant::Affiche() const
 {
-    cout << nom << " " << prenom << " de numero " << numeroEtudiant << " habite " << adresse << " et peut être joint au " << numeroTel << endl;
+    cout << "Etudiant n°" << numeroEtudiant << ": " << nom << " " << prenom << " habite " << adresse << " et peut être joint au " << numeroTel << endl;
 
     cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " << diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " année." << endl;
 }

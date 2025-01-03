@@ -8,7 +8,7 @@ using namespace std;
 
 void EtudiantDeuxiemeCycle::Affiche() const 
 {
-    Etudiant::Affiche(); cout << "-> discipline principale: " << NomDisciplinePrincipale << endl;
+    Etudiant::Affiche(); cout << "La discipline principale de son diplôme de " << diplomeActuel->getDiplome()->getNom() << " est: " << NomDisciplinePrincipale << endl;
 }
 
 string EtudiantDeuxiemeCycle::getNomDiscipline() const{

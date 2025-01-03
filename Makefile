@@ -1,20 +1,20 @@
-# Définition du compilateur et des options
-CXX = g++
-CXXFLAGS = -std=c++11
-
 # Nom de l'exécutable
-EXE = main
+TARGET = main
 
-# Fichiers source
-SRC = main.cpp Diplome.cpp DoubleDiplome.cpp
+# Répertoire source
+SRCDIR = src
 
-# Règle par défaut pour construire l'exécutable
-all: $(EXE)
+# Fichiers sources dans le dossier src
+SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/Entreprise.cpp $(SRCDIR)/Heure.cpp $(SRCDIR)/RendezVous.cpp $(SRCDIR)/Etudiant.cpp $(SRCDIR)/Date.cpp $(SRCDIR)/EtudiantPremierCycle.cpp $(SRCDIR)/EtudiantDeuxiemeCycle.cpp $(SRCDIR)/InscriptionActuelle.cpp $(SRCDIR)/Diplome.cpp
 
-# Lier tous les fichiers source pour créer un seul exécutable
-$(EXE): $(SRC)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(EXE)
+# Options de compilation
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++17
 
-# Commande pour nettoyer l'exécutable
+# Règle par défaut : construire l'exécutable
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# Nettoyage des fichiers générés
 clean:
-	rm -f $(EXE)
+	rm -f $(TARGET)

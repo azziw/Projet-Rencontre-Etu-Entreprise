@@ -20,13 +20,16 @@ class Date;
 class Heure;
 
 class Etudiant {
+    protected:
+        // attribut protégé afin d'être accessible par les classes qui héritent. (notamment pour la méthode Affiche de EtudiantDeuxiemeCycle)
+        InscriptionActuelle* diplomeActuel; 
+
     private : 
         int numeroEtudiant;
         string nom;
         string prenom;
         string adresse;
         string numeroTel;
-        InscriptionActuelle* diplomeActuel;
         vector<ExperiencePro *> ensExperience;
         vector<RendezVous *> ensRendezVous;
         vector<Diplome *> ensDiplomes;
