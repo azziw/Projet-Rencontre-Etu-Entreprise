@@ -7,6 +7,8 @@
 #include "Heure.hpp"
 #include "Entreprise.hpp"
 #include "Etudiant.hpp"
+#include "EtudiantPremierCycle.hpp"
+#include "EtudiantDeuxiemeCycle.hpp"
 
 int main() {
     // Création de deux diplômes
@@ -20,10 +22,15 @@ int main() {
     Heure heureDebut2(9,45);
     Heure heureFin2(11,00);
 
-    Etudiant etu1(2, "azzi", "william", "adresse", "0606060606");
-    Etudiant etu2(23, "azzou", "zoao", "dzd", "0606060606");
+    Diplome d1("D001", "Math", &date1, "Paris");
+    InscriptionActuelle ins1(&d1, &date1, 3);
+
+    Etudiant etu1(2, "azzi", "william", "adresse", "0606060606", nullptr);
+    Etudiant etu2(23, "azzou", "zoao", "dzd", "0606060606", &ins1);
     Entreprise ent1("entreprise", "adresse", "contact", "06060606");
     Entreprise ent2("auchan", "adresse", "contact", "06060606");
+
+    EtudiantDeuxiemeCycle etu3(3, "azzou", "zoao", "dzd", "0606060606", &ins1, "informatique");
 
     // Date date1(2022, 01, 3);
     Heure h1(1, 2);
@@ -31,30 +38,31 @@ int main() {
     RendezVous r1(&date1, &heureDebut, &heureFin, &etu1, &ent1);
     RendezVous r2(&date2, &heureDebut, &heureFin, &etu1, &ent1);
 
+    etu3.Affiche();
 
-    ent1.addRendezVous(&r1);
-    ent1.AfficheRdv(); 
+    // ent1.addRendezVous(&r1);
+    // ent1.AfficheRdv(); 
 
-    // ent1.addRendezVous(&r2); 
+    // // ent1.addRendezVous(&r2); 
 
-    // ent1.AfficheRdv();  
-    etu1.AfficheRdv();
+    // // ent1.AfficheRdv();  
+    // etu1.AfficheRdv();
 
-    ent1.removeRendezVous(&r1);
+    // ent1.removeRendezVous(&r1);
 
-    etu1.AfficheRdv();
-    ent1.AfficheRdv();
+    // etu1.AfficheRdv();
+    // ent1.AfficheRdv();
     
-    etu1.addRendezVous(&r2);
-    etu1.AfficheRdv(); 
-    ent1.AfficheRdv(); 
+    // etu1.addRendezVous(&r2);
+    // etu1.AfficheRdv(); 
+    // ent1.AfficheRdv(); 
 
-    ent1.setRendezVous(&etu2, &date1, &heureDebut2, &heureFin2);
+    // ent1.setRendezVous(&etu2, &date1, &heureDebut2, &heureFin2);
 
-    etu1.AfficheRdv(); 
-    ent1.AfficheRdv(); 
+    // etu1.AfficheRdv(); 
+    // ent1.AfficheRdv(); 
 
-    etu2.AfficheRdv();
+    // etu2.AfficheRdv();
 
     
     // r1.Affiche();

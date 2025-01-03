@@ -11,14 +11,14 @@ void InscriptionActuelle::setEtudiant(Etudiant* etu)
 }
 
 
-Diplome InscriptionActuelle::getDiplome() const
+Diplome* InscriptionActuelle::getDiplome() const
 {
-    return *diplome;
+    return diplome;
 }
 
-Date InscriptionActuelle::getDate() const
+Date* InscriptionActuelle::getDate() const
 {
-    return *datePremiereInscription;
+    return datePremiereInscription;
 }
 
 int InscriptionActuelle::getAnnee() const 

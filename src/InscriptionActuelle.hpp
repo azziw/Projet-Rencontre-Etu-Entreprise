@@ -8,6 +8,8 @@ using namespace std;
 #include "Diplome.hpp"
 #include "Date.hpp"
 
+class Etudiant;
+
 class InscriptionActuelle
 {
     private:
@@ -23,8 +25,8 @@ class InscriptionActuelle
             numeroAnnee = annee;
         }
 
-        Diplome getDiplome() const;
-        Date getDate() const;
+        Diplome* getDiplome() const;
+        Date* getDate() const;
         int getAnnee() const;
 
         void setDiplome(Diplome* nouveauDiplome);

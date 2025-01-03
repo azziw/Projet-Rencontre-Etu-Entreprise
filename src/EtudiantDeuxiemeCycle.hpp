@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "etudiant.hpp"
+#include "Etudiant.hpp"
 
 using namespace std;
 
@@ -14,11 +14,13 @@ class EtudiantDeuxiemeCycle : public Etudiant {
 
     public:
         // Constructeur
-        EtudiantDeuxiemeCycle(int numEtu, string Nom, string Prenom, string Addr, string Telephone, string NomDiscipline)
-            : Etudiant(numEtu, Nom, Prenom, Addr, Telephone)
+        EtudiantDeuxiemeCycle(int numEtu, string Nom, string Prenom, string Addr, string Telephone, InscriptionActuelle* diplome ,string NomDiscipline)
+            : Etudiant(numEtu, Nom, Prenom, Addr, Telephone, diplome)
         {
             NomDisciplinePrincipale = NomDiscipline;
         }
+
+        void Affiche() const;
 
         string getNomDiscipline() const;
 

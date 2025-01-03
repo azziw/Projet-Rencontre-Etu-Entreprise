@@ -32,12 +32,13 @@ class Etudiant {
         vector<Diplome *> ensDiplomes;
 
     public: 
-        Etudiant(int numEtu, string Nom, string Prenom, string Addr, string Telephone){
+        Etudiant(int numEtu, string Nom, string Prenom, string Addr, string Telephone, InscriptionActuelle* diplome){
             numeroEtudiant = numEtu;
             nom = Nom;
             prenom = Prenom;
             adresse = Addr;
             numeroTel = Telephone;
+            diplomeActuel = diplome;
         }
 
         void addDiplome(Diplome* D);
@@ -48,6 +49,7 @@ class Etudiant {
         void addRendezVous(RendezVous* R);
         void removeRendezVous(RendezVous* rdv, bool called = false);
         bool checkExistence(RendezVous* rdv);
+        virtual void Affiche() const; //méthode virtuelle car on dérive celle-ci dans les classes qui héritent de Etudiant.
         //getCV();
 
         int getNumeroEtudiant() const;
