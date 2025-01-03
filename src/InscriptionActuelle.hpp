@@ -31,6 +31,8 @@ class InscriptionActuelle
         void setDate(Date* date);
         void setAnnee(int annee);
 
+        void setEtudiant(Etudiant* etu);
+
 };
 
 #endif

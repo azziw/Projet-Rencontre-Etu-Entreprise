@@ -3,6 +3,12 @@
 using namespace std;
 
 #include "InscriptionActuelle.hpp"
+#include "Etudiant.hpp"
+
+void InscriptionActuelle::setEtudiant(Etudiant* etu)
+{
+    etu->setDiplomeActuel(this);
+}
 
 
 Diplome InscriptionActuelle::getDiplome() const
@@ -23,7 +29,6 @@ int InscriptionActuelle::getAnnee() const
 void InscriptionActuelle::setDiplome(Diplome* nouveauDiplome)
 {
     diplome = nouveauDiplome;
-    // FAIRE ETUDIANT MISE A JOUR
 }
 
 void InscriptionActuelle::setDate(Date* date)
@@ -35,3 +40,4 @@ void InscriptionActuelle::setAnnee(int annee)
 {
     numeroAnnee = annee;
 }
+
