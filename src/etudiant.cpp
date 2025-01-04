@@ -11,7 +11,10 @@
 
 using namespace std;
 
+// ---- METHODES ---- //
 
+
+// Permet de vérifier si un rendez-vous est disponible à l'insertion
 RendezVous* Etudiant::checkDispo(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
@@ -40,6 +43,7 @@ RendezVous* Etudiant::checkDispo(RendezVous* rdv)
     return nullptr;
 }
 
+// ajoute un rendez-vous à l'etudiant et à l'entreprise correspondante.
 void Etudiant::addRendezVous(RendezVous* rdv)
 {
     RendezVous* conflitEtu = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'etudiant
@@ -76,7 +80,7 @@ void Etudiant::addRendezVous(RendezVous* rdv)
     }
 }
 
-
+// Vérifie si un rendez-vous existe déjà //
 bool Etudiant::checkExistence(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
@@ -92,16 +96,7 @@ bool Etudiant::checkExistence(RendezVous* rdv)
 }
 
 
-void Etudiant::setRendezVous(Entreprise* ent, Date* date, Heure* heureDebut, Heure* heureFin)
-{
-    RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, this, ent);
-
-    cout << endl;
-
-    addRendezVous(rdv);
-}
-
-
+// Permet d'enlever un rendez-vous existant 
 void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
 {
     cout << endl;
@@ -144,7 +139,7 @@ void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
     }
 }
 
-
+// Affiche les rendez-vous d'un étudiant triés par date
 void Etudiant::AfficheRdv()
 {
     vector<RendezVous *>::iterator iT;
@@ -178,7 +173,7 @@ void Etudiant::AfficheRdv()
     }
 }
 
-
+// Affiche l'étudiant 
 void Etudiant::Affiche() const
 {
     cout << "Etudiant n°" << numeroEtudiant << ": " << nom << " " << prenom << " habite " << adresse << " et peut être joint au " << numeroTel << endl;
@@ -186,6 +181,7 @@ void Etudiant::Affiche() const
     cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " << diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " année." << endl;
 }
 
+// Affiche les diplômes d'un étudiant
 void Etudiant::AfficheDiplomes() const
 {
     if(ensDiplomes.empty())
@@ -202,6 +198,7 @@ void Etudiant::AfficheDiplomes() const
     cout << endl;
 }
 
+// Affiche les expériences d'un étudiant
 void Etudiant::AfficheExperiences() const
 {
     if(ensExperience.empty())
@@ -218,6 +215,7 @@ void Etudiant::AfficheExperiences() const
     cout << endl;
 }
 
+// Permet d'afficher le CV d'un étudiant.
 void Etudiant::AfficheCv() const
 {
     cout << endl;
@@ -246,8 +244,8 @@ void Etudiant::addExperience(ExperiencePro* E){
     ensExperience.push_back(E);
 }
 
-// getCV() !!
 
+// ---- GETTERS ---- //
 
 int Etudiant::getNumeroEtudiant() const {
     return numeroEtudiant;
@@ -272,6 +270,20 @@ string Etudiant::getNumeroTel() const{
 InscriptionActuelle Etudiant::getDiplomeActuel() const{
     return *diplomeActuel;
 }
+
+// ---- SETTERS ---- //
+
+// Permet de planifier un rendez-vous avec une entreprise
+void Etudiant::setRendezVous(Entreprise* ent, Date* date, Heure* heureDebut, Heure* heureFin)
+{
+    RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, this, ent);
+
+    cout << endl;
+
+    //on ajoute le rendez-vous via la méthode addRendezVous
+    addRendezVous(rdv);
+}
+
 
 void Etudiant::setNumeroEtudiant(int num){
     numeroEtudiant = num;

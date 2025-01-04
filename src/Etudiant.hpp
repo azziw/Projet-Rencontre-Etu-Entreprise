@@ -44,12 +44,15 @@ class Etudiant {
             diplomeActuel = diplome;
         }
 
+// ---- METHODES ---- //
+
         void addDiplome(Diplome* D);
         void addExperience(ExperiencePro* E);
         
         void AfficheRdv();
+        //Méthodes virtuelles car on dérive celles-ci dans les classes qui héritent de Etudiant.
         virtual void AfficheCv() const;
-        virtual void Affiche() const; //méthode virtuelle car on dérive celle-ci dans les classes qui héritent de Etudiant.
+        virtual void Affiche() const; 
         virtual void AfficheDiplomes() const;
         virtual void AfficheExperiences() const;
 
@@ -58,6 +61,9 @@ class Etudiant {
         void removeRendezVous(RendezVous* rdv, bool called = false);
         bool checkExistence(RendezVous* rdv);
 
+// ------- GETTERS ET SETTERS -------- //
+
+    // GETTERS //
         int getNumeroEtudiant() const;
         string getNomEtudiant() const;
         string getPrenomEtudiant() const;
@@ -65,6 +71,7 @@ class Etudiant {
         string getNumeroTel() const;
         InscriptionActuelle getDiplomeActuel() const;
 
+    // SETTERS //
         void setRendezVous(Entreprise* etu, Date* date, Heure* heureDebut, Heure* heureFin);
         void setNumeroEtudiant(int num);
         void setNomEtudiant(string Nom);

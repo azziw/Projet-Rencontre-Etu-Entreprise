@@ -24,12 +24,19 @@ class Diplome {
         }
 
 
+// ---- METHODES ---- //
+
         virtual void Affiche() const;
+
+// ---- GETTERS ET SETTERS ---- //
+
+    // GETTERS //
         string getCode() const;
         string getNom() const;
-        Date getDate() const;
+        Date* getDate() const;
         string getLieu() const;
 
+    // SETTERS //
         void setCode(string code);
         void setNom(string nom);
         void setDate(Date* date);

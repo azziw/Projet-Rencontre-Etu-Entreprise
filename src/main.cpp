@@ -1,7 +1,8 @@
 #include <iostream>
 #include <ctime>
-// #include "Diplome.hpp"
-// #include "DoubleDiplome.hpp"
+
+#include "Diplome.hpp"
+#include "DoubleDiplome.hpp"
 #include "RendezVous.hpp"
 #include "Date.hpp"
 #include "Heure.hpp"
@@ -48,23 +49,33 @@ int main() {
 
     GestionEntreprise gestion;
 
-    ent1.addRendezVous(&r1);
-    ent1.addRendezVous(&r2);
+    DoubleDiplome dd1(&d1, &d2);
 
-    etu4.setRendezVous(&ent1, &date3, &heureDebut3, &heureFin3);
+    dd1.Affiche();
 
-    etu1.AfficheRdv();
+    Diplome d3("D004", "INFO", &date2, "Lyon");
+    
+    dd1.setDiplome1(&d3);
 
-    gestion.addEntreprise(&ent1);
-    gestion.addEntreprise(&ent2);
+    dd1.Affiche();
 
-    gestion.AfficheRdv();
+    // ent1.addRendezVous(&r1);
+    // ent1.addRendezVous(&r2);
 
-    etu4.addExperience(&ep1);
+    // etu4.setRendezVous(&ent1, &date3, &heureDebut3, &heureFin3);
 
-    etu4.AfficheCv();
+    // etu1.AfficheRdv();
 
-    etu4.AfficheExperiences();
+    // gestion.addEntreprise(&ent1);
+    // gestion.addEntreprise(&ent2);
+
+    // gestion.AfficheRdv();
+
+    // etu4.addExperience(&ep1);
+
+    // etu4.AfficheCv();
+
+    // etu4.AfficheExperiences();
 
 
 

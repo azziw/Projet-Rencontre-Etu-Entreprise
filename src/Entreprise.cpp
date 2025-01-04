@@ -8,6 +8,9 @@ using namespace std;
 #include "Heure.hpp"
 #include "Etudiant.hpp"
 
+// ---- METHODES ---- //
+
+// Permet de vérifier si un rendez-vous est disponible à l'insertion
 RendezVous* Entreprise::checkDispo(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
@@ -36,6 +39,7 @@ RendezVous* Entreprise::checkDispo(RendezVous* rdv)
     return nullptr;
 }
 
+// ajoute un rendez-vous à l'entreprise et à l'étudiant correspondant.
 void Entreprise::addRendezVous(RendezVous* rdv)
 {
     RendezVous* conflitEnt = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'entreprise
@@ -72,6 +76,7 @@ void Entreprise::addRendezVous(RendezVous* rdv)
     }
 }
 
+// Vérifie si un rendez-vous existe déjà //
 bool Entreprise::checkExistence(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
@@ -86,6 +91,7 @@ bool Entreprise::checkExistence(RendezVous* rdv)
     return false;
 }
 
+// Permet d'enlever un rendez-vous existant 
 void Entreprise::removeRendezVous(RendezVous* rdv, bool called)
 {
     cout << endl;
@@ -129,16 +135,7 @@ void Entreprise::removeRendezVous(RendezVous* rdv, bool called)
     }
 }
 
-void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin)
-{
-    RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, etu, this);
-
-    cout << endl;
-
-    addRendezVous(rdv);
-}
-
-
+// Affiche les rendez-vous d'une entreprise triés par date
 void Entreprise::AfficheRdv()
 {
     vector<RendezVous *>::iterator iT;
@@ -165,6 +162,8 @@ void Entreprise::AfficheRdv()
     }
 }
 
+// ---- GETTERS ---- /
+
 string Entreprise::getNom() const
 {
     return nom;
@@ -190,6 +189,16 @@ vector<RendezVous *> Entreprise::getRendezVous() const
     return ensRendezVous;
 }
 
+// ---- SETTERS ---- //
+
+void Entreprise::setRendezVous(Etudiant* etu, Date* date, Heure* heureDebut, Heure* heureFin)
+{
+    RendezVous* rdv = new RendezVous(date, heureDebut, heureFin, etu, this);
+
+    cout << endl;
+
+    addRendezVous(rdv);
+}
 
 void Entreprise::setNom(string Nom)
 {

@@ -28,6 +28,7 @@ class Entreprise
             telephoneContact = tel;
         }
 
+// ---- METHODES ---- //
 
         void AfficheRdv();
         RendezVous* checkDispo(RendezVous* rdv);
@@ -35,12 +36,16 @@ class Entreprise
         void removeRendezVous(RendezVous* rdv, bool call = false);
         bool checkExistence(RendezVous* rdv);
 
+// ---- GETTERS ET SETTERS ---- //
+
+    // GETTERS //
         string getNom() const;
         string getAdresse() const;
         string getNomContact() const;
         string getTelephoneContact() const;
         vector<RendezVous *> getRendezVous() const;
 
+    // SETTERS //
         void setNom(string Nom);
         void setAdresse(string Adresse);
         void setNomContact(string NomContact);

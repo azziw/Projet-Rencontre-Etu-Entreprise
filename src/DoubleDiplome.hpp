@@ -10,25 +10,34 @@ using namespace std;
 class DoubleDiplome : public Diplome {
 
     private:
-        Diplome diplome1;
-        Diplome diplome2;
+        Diplome* diplome1;
+        Diplome* diplome2;
 
     public:
-        //Construction d'un nouveau Diplome
-        DoubleDiplome(Diplome D1, Diplome D2) 
+        //Construction d'un nouveau Diplome à partir de deux Diplomes
+        DoubleDiplome(Diplome* D1, Diplome* D2) 
             : Diplome( // Appel au constructeur de Diplome 
-                D1.getCode() + "-" + D2.getCode(), //Nouveau code combiné des deuxDiplomes
-                D1.getNom() + "-" + D2.getNom(), //Nouveau nom pour le double Diplome
-                D1.getDate(), 
-                D1.getLieu()), 
+                D1->getCode() + "-" + D2->getCode(), //on génère un code combiné des deux codes des diplomes
+                D1->getNom() + "-" + D2->getNom(), //on génère un nom combiné des deux noms des diplomes
+                D1->getDate(), 
+                D1->getLieu()), 
             diplome1(D1), 
             diplome2(D2) 
         {}
 
-        void afficher() const;
-        Diplome getDiplome1() const;
-        Diplome getDiplome2() const;
+// ---- METHODES ---- //
 
+        void afficher() const;
+
+// ---- GETTERS ET SETTERS ---- //
+
+    // GETTERS //
+        Diplome* getDiplome1() const;
+        Diplome* getDiplome2() const;
+
+    // SETTERS //
+        void setDiplome1(Diplome* D1);
+        void setDiplome2(Diplome* D2);
 };
 
 #endif
