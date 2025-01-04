@@ -8,6 +8,8 @@ using namespace std;
 #include "Date.hpp"
 #include "Heure.hpp"
 
+// ---- METHODES ---- //
+
 void RendezVous::Affiche()
 {
     cout << "Rdv entre: " << etudiant->getNomEtudiant() << " et " << entreprise->getNom() << " le " << date->toString() << " de " << heureDebut->toString() << " à " << heureFin->toString() << endl;
@@ -17,6 +19,10 @@ string RendezVous::toString()
 {
     return etudiant->getNomEtudiant() + " et " + entreprise->getNom() + " le " + date->toString() + " de " + heureDebut->toString() + " à " + heureFin->toString();
 }
+
+// ---- GETTERS ET SETTERS ---- //
+
+// GETTERS //
 
 Date* RendezVous::getDate() const
 {
@@ -48,6 +54,8 @@ Rencontre* RendezVous::getRencontre() const
     return rencontre;
 }
 
+// SETTERS //
+
 void RendezVous::setDate(Date* Date)
 {
     date = Date;
@@ -77,6 +85,8 @@ void RendezVous::setRencontre(Rencontre* ren)
 {
     rencontre = ren;
 }
+
+// ---- OPERATEURS ---- //
 
 bool RendezVous::operator<(const RendezVous& other) const {
     if (*date != *other.date) return *date < *other.date;

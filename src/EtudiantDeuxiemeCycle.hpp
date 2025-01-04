@@ -20,9 +20,16 @@ class EtudiantDeuxiemeCycle : public Etudiant {
             NomDisciplinePrincipale = NomDiscipline;
         }
 
+
+// ---- METHODES ---- //
+
         void Affiche() const;
 
+// ---- GETTERS ----- //
+
         string getNomDiscipline() const;
+
+// ---- SETTERS ----- //
 
         void setNomDiscipline(string nom);
 

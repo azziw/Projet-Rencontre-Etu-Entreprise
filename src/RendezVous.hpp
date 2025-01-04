@@ -33,6 +33,15 @@ class RendezVous
             entreprise = ent;
         }
 
+// ---- METHODES ---- //
+
+        void Affiche();
+        string toString();
+
+// ---- GETTERS ET SETTERS ---- //
+
+    // GETTERS //
+
         Date* getDate() const;
         Heure* getHeureDebut() const;
         Heure* getHeureFin() const;
@@ -40,14 +49,16 @@ class RendezVous
         Entreprise* getEntreprise() const;
         Rencontre* getRencontre() const;
 
+    // SETTERS //
+
         void setDate(Date* Date);
         void setHeureDebut(Heure* HeureD);
         void setHeureFin(Heure* HeureF);
         void setEtudiant(Etudiant* etu);
         void setEntreprise(Entreprise* ent);
         void setRencontre(Rencontre* ren);
-        void Affiche();
-        string toString();
+
+// ---- OPERATEURS ---- //
 
         bool operator<(const RendezVous& other) const;
 };

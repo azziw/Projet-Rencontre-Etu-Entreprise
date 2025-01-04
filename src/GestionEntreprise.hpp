@@ -15,6 +15,9 @@ class GestionEntreprise
     public:
         GestionEntreprise(){}
 
+
+    // ---- METHODES ---- //
+
         void AfficheRdv();
         void addEntreprise(Entreprise* ent);
 };

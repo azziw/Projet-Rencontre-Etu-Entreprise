@@ -8,6 +8,9 @@ using namespace std;
 #include "RendezVous.hpp"
 #include "Heure.hpp"
 
+
+// ---- METHODES ---- //
+
 void GestionEntreprise::addEntreprise(Entreprise* ent)
 {
     ensEntreprises.push_back(ent);

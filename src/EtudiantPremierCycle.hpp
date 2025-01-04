@@ -28,11 +28,19 @@ class EtudiantPremierCycle : public Etudiant {
             this->addDiplome(bac);
         };
 
+
+// ----- METHODES ----- //
+
+        void Affiche() const;
+
+// ----- GETTERS ----- //
+
         string getSerie() const;
         string getAnneeBac() const;
         string getLieuBac() const;
 
-        void Affiche() const;
+// ----- SETTERS ----- //
+
         void setSerie(string s);
         void setAnneeBac(string annee);
         void setLieuBac(string Lieu);

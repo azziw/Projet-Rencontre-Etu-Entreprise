@@ -5,11 +5,10 @@ using namespace std;
 #include "InscriptionActuelle.hpp"
 #include "Etudiant.hpp"
 
-void InscriptionActuelle::setEtudiant(Etudiant* etu)
-{
-    etu->setDiplomeActuel(this);
-}
 
+// ---- GETTERS ET SETTERS ---- //
+
+// GETTERS //
 
 Diplome* InscriptionActuelle::getDiplome() const
 {
@@ -24,6 +23,13 @@ Date* InscriptionActuelle::getDate() const
 int InscriptionActuelle::getAnnee() const 
 {
     return numeroAnnee;
+}
+
+// SETTERS //
+
+void InscriptionActuelle::setEtudiant(Etudiant* etu)
+{
+    etu->setDiplomeActuel(this);
 }
 
 void InscriptionActuelle::setDiplome(Diplome* nouveauDiplome)

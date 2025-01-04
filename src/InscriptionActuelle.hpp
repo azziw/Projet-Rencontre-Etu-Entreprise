@@ -25,14 +25,20 @@ class InscriptionActuelle
             numeroAnnee = annee;
         }
 
+// ---- GETTERS ET SETTERS ---- //
+
+    // GETTERS //
+
         Diplome* getDiplome() const;
         Date* getDate() const;
         int getAnnee() const;
 
+
+    // SETTERS //
+    
         void setDiplome(Diplome* nouveauDiplome);
         void setDate(Date* date);
         void setAnnee(int annee);
-
         void setEtudiant(Etudiant* etu);
 
 };

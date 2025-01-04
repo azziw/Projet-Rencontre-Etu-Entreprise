@@ -23,13 +23,20 @@ class ExperiencePro {
             fonctionOccupee = fonc;
         }
 
+// ---- METHODES ----- //
+
         void Affiche() const;
+
+// ---- GETTERS ---- //
 
         Date* getDateDebut() const;
         Date* getDateFin() const;
         string getNomEnt() const;
         string getFonction() const;
         Etudiant* getEtudiant() const;
+
+
+// ---- SETTERS ---- //
 
         void setDateDebut(Date* d);
         void setDateFin(Date* d);

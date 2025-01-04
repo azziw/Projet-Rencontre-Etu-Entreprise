@@ -15,10 +15,25 @@ class Heure {
             heures = H;
             minutes = M;
         }
+
+// ----- METHODES ----- //
         
         string toString() const;
         void Affiche() const;
         int tempsTotal() const;
+
+// ----- GETTERS ET SETTERS ---- //
+    
+    // GETTERS //
+        int getHeures() const;
+        int getMinutes() const;
+
+    // SETTERS //
+        void setHeures(int H);
+        void setMinutes(int M);
+        
+// ---- OPERATEURS ---- //
+
         bool operator< (const Heure& heure2) const;
         bool operator== (const Heure& heure2) const;
         bool operator!= (const Heure& heure2) const;

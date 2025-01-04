@@ -6,11 +6,14 @@ using namespace std;
 
 #include "EtudiantPremierCycle.hpp"
 
+// ---- METHODES ---- //
 
 void EtudiantPremierCycle::Affiche() const 
 {
     Etudiant::Affiche(); cout << "Il a précédemment obtenu un " << SerieBac << " en " << anneeObtentionBac << " à " << lieuObtentionBac << endl;
 }
+
+// ---- GETTERS ---- //
 
 string EtudiantPremierCycle::getSerie() const{
     return SerieBac;
@@ -23,6 +26,8 @@ string EtudiantPremierCycle::getAnneeBac() const{
 string EtudiantPremierCycle::getLieuBac() const{
     return lieuObtentionBac;
 }
+
+// ---- SETTERS ---- //
 
 void EtudiantPremierCycle::setSerie(string s){
     SerieBac = s;

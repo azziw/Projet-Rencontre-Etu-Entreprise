@@ -6,9 +6,13 @@ using namespace std;
 
 #include "ExperiencePro.hpp"
 
+// ---- METHODES ---- //
+
 void ExperiencePro::Affiche() const{
     cout << "Du " << dateDebut->toString() << " au " << dateFin->toString() << " : " << fonctionOccupee << " chez " << nomEntreprise << endl;
 }
+
+// ---- GETTERS ---- //
 
 Date* ExperiencePro::getDateDebut() const{
     return dateDebut;
@@ -29,6 +33,10 @@ string ExperiencePro::getFonction() const{
 Etudiant* ExperiencePro::getEtudiant() const{
     return etudiant;
 }
+
+
+// ---- SETTERS ---- //
+
 
 void ExperiencePro::setDateDebut(Date* d){
     dateDebut = d;
