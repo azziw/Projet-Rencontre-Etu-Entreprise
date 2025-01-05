@@ -1,5 +1,10 @@
 # Projet Rencontres Étudiants-Entreprises (REE)
 
+## Exécution
+
+g++ -std=c++11 -o programme main.cpp Entreprise.cpp Etudiant.cpp RendezVous.cpp ExperiencePro.cpp InscriptionActuelle.cpp Date.cpp Heure.cpp Diplome.cpp GestionEtudiant.cpp GestionEntreprise.cpp DoubleDiplome.cpp EtudiantDeuxiemeCycle.cpp EtudiantPremierCycle.cpp
+
+
 ## Objectif du projet
 
 Ce projet consiste à réaliser un logiciel de gestion des Rencontres Étudiants-Entreprises (REE) depuis la phase d'analyse jusqu'à l'implémentation en C++. Le but est de permettre la gestion d'étudiants et d'entreprises participantes à ces rencontres, avec diverses fonctionnalités pour ajouter et gérer les informations des étudiants, des entreprises et des rendez-vous.
