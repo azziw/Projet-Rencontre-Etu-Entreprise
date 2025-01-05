@@ -27,7 +27,7 @@ class DoubleDiplome : public Diplome {
 
 // ---- METHODES ---- //
 
-        void afficher() const;
+        void Affiche() const;
 
 // ---- GETTERS ET SETTERS ---- //
 

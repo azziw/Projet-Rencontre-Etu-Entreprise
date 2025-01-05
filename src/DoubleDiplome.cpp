@@ -6,7 +6,7 @@ using namespace std;
 
 // METHODES //
 
-void DoubleDiplome::afficher() const {
+void DoubleDiplome::Affiche() const {
     cout << "Double Diplome:" << endl;
     Diplome::Affiche();
 }
