@@ -19,7 +19,12 @@ class GestionEntreprise
     // ---- METHODES ---- //
 
         void AfficheRdv();
+        void AfficheEntreprises();
+        void removeRendezVousEtudiant(Etudiant* etu);
         void addEntreprise(Entreprise* ent);
+        void removeRendezVous();
+
+        Entreprise* getEntreprise(string nom);
 };
 
 #endif

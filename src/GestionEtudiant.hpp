@@ -20,7 +20,12 @@ class GestionEtudiant
         void AfficheRdv();
         void addEtudiant(Etudiant* etu);
         void AfficheEtudiants();
+        void AfficheRappelEtudiant();
+        void removeEtudiant(Etudiant* etu);
+        void removeRendezVous();
         Etudiant* getEtudiant(int numEtu);
+        vector<Etudiant *> getEnsEtudiant() const;
+
 };
 
 #endif

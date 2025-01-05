@@ -139,6 +139,38 @@ void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
     }
 }
 
+void Etudiant::removeDiplome(Diplome* diplome)
+{
+    vector<Diplome*>::iterator iT;
+
+    for(iT = ensDiplomes.begin(); iT != ensDiplomes.end(); iT++)
+    {
+        if((*iT) == diplome)
+        {
+            ensDiplomes.erase(iT);
+            cout << "Le diplôme " << diplome->getNom() << " a été supprimé de " << nom << " avec succès." << endl;
+            return;
+        }
+    }
+    cerr << "Impossible de supprimer le diplôme " << diplome->getNom() << ", celui-ci n'existe pas pour " << nom << endl;
+}
+
+void Etudiant::removeExperience(ExperiencePro* experience)
+{
+    vector<ExperiencePro*>::iterator iT;
+
+    for(iT = ensExperience.begin(); iT != ensExperience.end(); iT++)
+    {
+        if((*iT) == experience)
+        {
+            ensExperience.erase(iT);
+            cout << "L'expérience " << experience->getNomEnt() << " a été supprimée de " << nom << " avec succès." << endl;
+            return;
+        }
+    }
+    cerr << "Impossible de supprimer l'expérience " << experience->getNomEnt() << ", celle-ci n'existe pas pour " << nom << endl;
+}
+
 // Affiche les rendez-vous d'un étudiant triés par date
 void Etudiant::AfficheRdv()
 {
@@ -176,7 +208,7 @@ void Etudiant::AfficheRdv()
 // Affiche l'étudiant 
 void Etudiant::Affiche() const
 {
-    cout << "Etudiant n°" << numeroEtudiant << ": " << nom << " " << prenom << " habite " <<
+    cout << "(n°" << numeroEtudiant << "): " << nom << " " << prenom << " habite " <<
         adresse << " et peut être joint au " << numeroTel << endl;
 
     cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " <<
@@ -270,8 +302,20 @@ string Etudiant::getNumeroTel() const{
     return numeroTel;
 }
 
-InscriptionActuelle Etudiant::getDiplomeActuel() const{
-    return *diplomeActuel;
+InscriptionActuelle* Etudiant::getDiplomeActuel() const{
+    return diplomeActuel;
+}
+
+vector<RendezVous*> Etudiant::getRendezVous(){
+    return ensRendezVous;
+}
+
+vector<Diplome*> Etudiant::getDiplomes(){
+    return ensDiplomes;
+}
+
+vector<ExperiencePro*> Etudiant::getExperiences(){
+    return ensExperience;
 }
 
 // ---- SETTERS ---- //

@@ -59,6 +59,8 @@ class Etudiant {
         RendezVous* checkDispo(RendezVous* rdv);
         void addRendezVous(RendezVous* R);
         void removeRendezVous(RendezVous* rdv, bool called = false);
+        void removeDiplome(Diplome* diplome);
+        void removeExperience(ExperiencePro* experience);
         bool checkExistence(RendezVous* rdv);
 
 // ------- GETTERS ET SETTERS -------- //
@@ -69,7 +71,10 @@ class Etudiant {
         string getPrenomEtudiant() const;
         string getAdresseEtudiant() const;
         string getNumeroTel() const;
-        InscriptionActuelle getDiplomeActuel() const;
+        InscriptionActuelle* getDiplomeActuel() const;
+        vector<RendezVous*> getRendezVous();
+        vector<Diplome*> getDiplomes();
+        vector<ExperiencePro*> getExperiences();
 
     // SETTERS //
         void setRendezVous(Entreprise* etu, Date* date, Heure* heureDebut, Heure* heureFin);
