@@ -10,7 +10,7 @@ using namespace std;
 #include "Diplome.hpp"
 #include "InscriptionActuelle.hpp"
 
-//on fait des déclarations anticipées pour éviter des inclusions circulaires
+//on fait des declarations anticipees pour eviter des inclusions circulaires
 class RendezVous;
 class InscriptionActuelle;
 class ExperiencePro;
@@ -21,7 +21,7 @@ class Heure;
 
 class Etudiant {
     protected:
-        // attribut protégé afin d'être accessible par les classes qui héritent. (notamment pour la méthode Affiche de EtudiantDeuxiemeCycle)
+        // attribut protege afin d'être accessible par les classes qui heritent. (notamment pour la methode Affiche de EtudiantDeuxiemeCycle)
         InscriptionActuelle* diplomeActuel; 
 
     private : 
@@ -50,7 +50,7 @@ class Etudiant {
         void addExperience(ExperiencePro* E);
         
         void AfficheRdv();
-        //Méthodes virtuelles car on dérive celles-ci dans les classes qui héritent de Etudiant.
+        //Methodes virtuelles car on derive celles-ci dans les classes qui heritent de Etudiant.
         virtual void AfficheCv() const;
         virtual void Affiche() const; 
         virtual void AfficheDiplomes() const;

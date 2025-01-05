@@ -23,7 +23,7 @@ class Diplome {
             lieuObtention = lieu;
         }
 
-        //Constructeur sans date pour représenter un diplome en cours.
+        //Constructeur sans date pour representer un diplome en cours.
         Diplome(string code, string nom, string lieu)
         {
             Code = code;

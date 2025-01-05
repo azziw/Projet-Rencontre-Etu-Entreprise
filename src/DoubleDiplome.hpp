@@ -17,8 +17,8 @@ class DoubleDiplome : public Diplome {
         //Construction d'un nouveau Diplome à partir de deux Diplomes
         DoubleDiplome(Diplome* D1, Diplome* D2) 
             : Diplome( // Appel au constructeur de Diplome 
-                D1->getCode() + "-" + D2->getCode(), //on génère un code combiné des deux codes des diplomes
-                D1->getNom() + "-" + D2->getNom(), //on génère un nom combiné des deux noms des diplomes
+                D1->getCode() + "-" + D2->getCode(), //on genère un code combine des deux codes des diplomes
+                D1->getNom() + "-" + D2->getNom(), //on genère un nom combine des deux noms des diplomes
                 D1->getDate(), 
                 D1->getLieu()), 
             diplome1(D1), 

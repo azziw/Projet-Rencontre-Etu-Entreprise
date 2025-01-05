@@ -64,7 +64,7 @@ void GestionEtudiant::AfficheEtudiants()
 {
     if (ensEtudiant.empty()) {
         cout << endl;
-        cout << "Aucun étudiant n'a été ajouté." << endl;
+        cout << "Aucun etudiant n'a ete ajoute." << endl;
         return;
     }
     else
@@ -76,7 +76,7 @@ void GestionEtudiant::AfficheEtudiants()
         return a->getNomEtudiant() < b->getNomEtudiant();
         });
 
-        cout << "\033[4mLes étudiants sont (triés alphabétiquement):\033[0m" << endl;
+        cout << "\033[4mLes etudiants sont (tries alphabetiquement):\033[0m" << endl;
         cout << endl;
         for (auto& etu : ensEtudiant) {
             etu->Affiche();
@@ -87,10 +87,10 @@ void GestionEtudiant::AfficheEtudiants()
 
 void GestionEtudiant::AfficheRappelEtudiant()
 {
-    cout << "Rappel des étudiants: (triés par n° etu)" << endl;
+    cout << "Rappel des etudiants: (tries par n° etu)" << endl;
     if(ensEtudiant.empty())
     {
-        cout << "Aucun étudiant n'a été ajouté." << endl;
+        cout << "Aucun etudiant n'a ete ajoute." << endl;
     }
     else
     {
@@ -122,7 +122,7 @@ void GestionEtudiant::AfficheRdv()
     });
 
     // Affichage des rendez-vous pour chaque entreprise
-    cout << "\033[4mLes étudiants et leurs rendez-vous sont :\033[0m" << endl;
+    cout << "\033[4mLes etudiants et leurs rendez-vous sont :\033[0m" << endl;
     for (auto& etu : ensEtudiant) {
         cout << "\nEtudiant : \033[4m" << etu->getNomEtudiant() << " " << etu->getPrenomEtudiant() << "\033[0m" << endl;
         etu->AfficheRdv();

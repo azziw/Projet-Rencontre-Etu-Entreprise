@@ -73,7 +73,7 @@ void GestionEntreprise::AfficheEntreprises()
 {
     if (ensEntreprises.empty()) {
         cout << endl;
-        cout << "Aucune entreprise n'a été ajoutée." << endl;
+        cout << "Aucune entreprise n'a ete ajoutee." << endl;
         return;
     }
     else

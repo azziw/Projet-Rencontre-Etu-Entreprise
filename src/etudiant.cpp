@@ -15,7 +15,7 @@ using namespace std;
 // ---- METHODES ---- //
 
 
-// Permet de vérifier si un rendez-vous est disponible à l'insertion
+// Permet de verifier si un rendez-vous est disponible à l'insertion
 RendezVous* Etudiant::checkDispo(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
@@ -25,7 +25,7 @@ RendezVous* Etudiant::checkDispo(RendezVous* rdv)
         //Si il existe deja un rendez-vous le même jour
         if(*(*iT)->getDate() == *rdv->getDate())
         {
-            //Alors je regarde si le rendez-vous est au milieu du créneau d'un rendez-vous existant
+            //Alors je regarde si le rendez-vous est au milieu du creneau d'un rendez-vous existant
             
             //Si le rendez-vous est pendant un autre rendez-vous
             if (*(*iT)->getHeureDebut() < *rdv->getHeureFin() && *rdv->getHeureDebut() < *(*iT)->getHeureFin()) 
@@ -50,38 +50,38 @@ void Etudiant::addRendezVous(RendezVous* rdv)
     RendezVous* conflitEtu = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'etudiant
 
     Entreprise* entrepriseConcerne = rdv->getEntreprise();
-    RendezVous* conflitEnt = entrepriseConcerne->checkDispo(rdv); // On regarde si il y a un conflit avec l'entreprise concernée
+    RendezVous* conflitEnt = entrepriseConcerne->checkDispo(rdv); // On regarde si il y a un conflit avec l'entreprise concernee
 
     cout << endl;
 
     //Si il n'y a pas de conflit pour l'etudiant
     if(conflitEtu == nullptr)
     {
-        //Si il n'y a pas de conflit pour l'entreprise concernée
+        //Si il n'y a pas de conflit pour l'entreprise concernee
         if(conflitEnt == nullptr)
         {
-            cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
+            cout << "Creneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
             ensRendezVous.push_back(rdv);
             entrepriseConcerne->addRendezVous(rdv);
         }
         //Si il n'y a pas de confl it pour l'etudiant mais qu'il y en a un pour l'entreprise
         else
         {
-            cout << "Créneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
+            cout << "Creneau Disponible, ajout du rendez-vous entre : " << rdv->toString() << " pour " << nom << endl;
             ensRendezVous.push_back(rdv);
         }
     }
     //Si il y a un conflit pour l'etudiant
     else
     {
-        cerr << "Impossible d'ajouter ce rendez-vous, le créneau du " << rdv->getDate()->toString() << " de " <<
+        cerr << "Impossible d'ajouter ce rendez-vous, le creneau du " << rdv->getDate()->toString() << " de " <<
         rdv->getHeureDebut()->toString() << " à " << rdv->getHeureFin()->toString() << " n'est pas disponible." << endl <<
-        "Celui-ci est en conflit avec le rdv de: " << conflitEtu->toString() << endl << //erreur on affiche que le créneau n'est pas dispo
-        "Veuillez Réessayer!" << endl;
+        "Celui-ci est en conflit avec le rdv de: " << conflitEtu->toString() << endl << //erreur on affiche que le creneau n'est pas dispo
+        "Veuillez Reessayer!" << endl;
     }
 }
 
-// Vérifie si un rendez-vous existe déjà //
+// Verifie si un rendez-vous existe dejà //
 bool Etudiant::checkExistence(RendezVous* rdv)
 {
     vector<RendezVous*>::iterator iT;
@@ -105,9 +105,9 @@ void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
     Entreprise* entrepriseConcerne = rdv->getEntreprise();
 
     RendezVous* conflitEtu = checkDispo(rdv); //On regarde si il y a un conflit avec les rendez-vous de l'etudiant
-    bool exist = checkExistence(rdv); //permet de vérifier si le rendez-vous existe dans la liste de rendez-vous
+    bool exist = checkExistence(rdv); //permet de verifier si le rendez-vous existe dans la liste de rendez-vous
 
-    //si il n'existe pas, c'est qu'on essaie de supprier un rendez-vous qui n'as jamais été ajouté.
+    //si il n'existe pas, c'est qu'on essaie de supprier un rendez-vous qui n'as jamais ete ajoute.
     if(!exist)
     {
         cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", celui-ci n'existe pas pour " << nom << endl;
@@ -117,7 +117,7 @@ void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
     //Si on trouve ne trouve pas le rendez-vous
     if(conflitEtu == nullptr)
     {
-        cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", il n'est pas programmé pour " << nom << endl; 
+        cerr << "Impossible de supprimer le rdv entre " << rdv->toString() << ", il n'est pas programme pour " << nom << endl; 
     }
     //On trouve le rendez-vous
     else
@@ -129,7 +129,7 @@ void Etudiant::removeRendezVous(RendezVous* rdv, bool called)
             if((*iT) == rdv)
             {
                 ensRendezVous.erase(iT);
-                cout << "Le rendez-vous " << rdv->toString() << " a été supprimé de " << nom << " avec succès." << endl;
+                cout << "Le rendez-vous " << rdv->toString() << " a ete supprime de " << nom << " avec succès." << endl;
                 if(called != true)
                 {
                     entrepriseConcerne->removeRendezVous(rdv, true); // On enlève aussi le rendez-vous pour l'entreprise
@@ -149,7 +149,7 @@ void Etudiant::removeDiplome(Diplome* diplome)
         if((*iT) == diplome)
         {
             ensDiplomes.erase(iT);
-            cout << "Le diplôme " << diplome->getNom() << " a été supprimé de " << nom << " avec succès." << endl;
+            cout << "Le diplôme " << diplome->getNom() << " a ete supprime de " << nom << " avec succès." << endl;
             return;
         }
     }
@@ -165,14 +165,14 @@ void Etudiant::removeExperience(ExperiencePro* experience)
         if((*iT) == experience)
         {
             ensExperience.erase(iT);
-            cout << "L'expérience " << experience->getNomEnt() << " a été supprimée de " << nom << " avec succès." << endl;
+            cout << "L'experience " << experience->getNomEnt() << " a ete supprimee de " << nom << " avec succès." << endl;
             return;
         }
     }
-    cerr << "Impossible de supprimer l'expérience " << experience->getNomEnt() << ", celle-ci n'existe pas pour " << nom << endl;
+    cerr << "Impossible de supprimer l'experience " << experience->getNomEnt() << ", celle-ci n'existe pas pour " << nom << endl;
 }
 
-// Affiche les rendez-vous d'un étudiant triés par date
+// Affiche les rendez-vous d'un etudiant tries par date
 void Etudiant::AfficheRdv()
 {
     vector<RendezVous *>::iterator iT;
@@ -182,11 +182,11 @@ void Etudiant::AfficheRdv()
     //Si l'ensemble est vide on ne le parcours pas.
     if (ensRendezVous.empty())
     {
-        cout << "Aucun rendez-vous n'est planifié pour l'etudiant " << nom << endl;
+        cout << "Aucun rendez-vous n'est planifie pour l'etudiant " << nom << endl;
     }
     else
     {
-        if(nom == prenom) //en cas d'homonyme on affiche aussi le numéro d'étudiant
+        if(nom == prenom) //en cas d'homonyme on affiche aussi le numero d'etudiant
         {
             cout << "L'etudiant "  << nom << " " << prenom << " n° " << numeroEtudiant << " a les rendez-vous suivants:" << endl;
         }
@@ -206,22 +206,22 @@ void Etudiant::AfficheRdv()
     }
 }
 
-// Affiche l'étudiant 
+// Affiche l'etudiant 
 void Etudiant::Affiche() const
 {
     cout << "(n°" << numeroEtudiant << "): " << nom << " " << prenom << " habite " <<
         adresse << " et peut être joint au " << numeroTel << endl;
 
     cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " <<
-        diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " année." << endl;
+        diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " annee." << endl;
 }
 
-// Affiche les diplômes d'un étudiant
+// Affiche les diplômes d'un etudiant
 void Etudiant::AfficheDiplomes() const
 {
     if(ensDiplomes.empty())
     {
-        cout << "Aucun diplôme n'est enregistré pour cet étudiant." << endl;
+        cout << "Aucun diplôme n'est enregistre pour cet etudiant." << endl;
     }
     else
     {
@@ -234,12 +234,12 @@ void Etudiant::AfficheDiplomes() const
     cout << endl;
 }
 
-// Affiche les expériences d'un étudiant
+// Affiche les experiences d'un etudiant
 void Etudiant::AfficheExperiences() const
 {
     if(ensExperience.empty())
     {
-        cout << "Aucune expérience professionnelle n'est enregistrée pour cet étudiant." << endl;
+        cout << "Aucune experience professionnelle n'est enregistree pour cet etudiant." << endl;
     }
     else
     {
@@ -251,7 +251,7 @@ void Etudiant::AfficheExperiences() const
     cout << endl;
 }
 
-// Permet d'afficher le CV d'un étudiant.
+// Permet d'afficher le CV d'un etudiant.
 void Etudiant::AfficheCv() const
 {
     cout << endl;
@@ -259,12 +259,12 @@ void Etudiant::AfficheCv() const
     cout << endl;
     cout << "\033[4mInformations Administratives:\033[0m" << endl;
     cout << "Adresse: " << adresse << endl;
-    cout << "Numéro de téléphone: " << numeroTel << endl;
+    cout << "Numero de telephone: " << numeroTel << endl;
     cout << endl;
     cout << "\033[4mDiplômes Obtenus:\033[0m" << endl;
     this->AfficheDiplomes();
     cout << endl;
-    cout << "\033[4mExpériences Professionnelles:\033[0m" << endl;
+    cout << "\033[4mExperiences Professionnelles:\033[0m" << endl;
     this->AfficheExperiences();
     cout << endl;
 }
@@ -328,7 +328,7 @@ void Etudiant::setRendezVous(Entreprise* ent, Date* date, Heure* heureDebut, Heu
 
     cout << endl;
 
-    //on ajoute le rendez-vous via la méthode addRendezVous
+    //on ajoute le rendez-vous via la methode addRendezVous
     addRendezVous(rdv);
 }
 

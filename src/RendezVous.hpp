@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-//on fait des déclarations anticipées pour éviter des inclusions circulaires entre etudiant.hpp et rendezVous.hpp
+//on fait des declarations anticipees pour eviter des inclusions circulaires entre etudiant.hpp et rendezVous.hpp
 class Entreprise;
 class Etudiant;
 class Date;
