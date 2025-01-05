@@ -176,9 +176,11 @@ void Etudiant::AfficheRdv()
 // Affiche l'étudiant 
 void Etudiant::Affiche() const
 {
-    cout << "Etudiant n°" << numeroEtudiant << ": " << nom << " " << prenom << " habite " << adresse << " et peut être joint au " << numeroTel << endl;
+    cout << "Etudiant n°" << numeroEtudiant << ": " << nom << " " << prenom << " habite " <<
+        adresse << " et peut être joint au " << numeroTel << endl;
 
-    cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " << diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " année." << endl;
+    cout << "Il est inscrit en " << diplomeActuel->getDiplome()->getNom() << " depuis le " <<
+        diplomeActuel->getDate()->toString() << " et est en " << diplomeActuel->getAnnee() << " année." << endl;
 }
 
 // Affiche les diplômes d'un étudiant
