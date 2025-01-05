@@ -2,6 +2,8 @@
 #define ENTREPRISE_HPP
 
 #include <iostream>
+#include <string>
+#include <vector>
 
 class RendezVous;
 class Etudiant;
