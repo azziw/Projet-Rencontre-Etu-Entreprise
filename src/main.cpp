@@ -44,22 +44,22 @@ void displayMenu() {
 
     // ------- ETUDIANTS ------- //
 
-    cout << "\n----- GESTION DES ÉTUDIANTS -----" << endl;
-    cout << "1. Ajouter un étudiant" << endl;
-    cout << "2. Rechercher un étudiant" << endl;
-    cout << "3. Planifier un rendez-vous à un étudiant" << endl;
-    cout << "4. Ajouter un dîplome à un étudiant" << endl;
-    cout << "5. Ajouter une expérience à un étudiant" << endl;
+    cout << "\n----- GESTION DES eTUDIANTS -----" << endl;
+    cout << "1. Ajouter un etudiant" << endl;
+    cout << "2. Rechercher un etudiant" << endl;
+    cout << "3. Planifier un rendez-vous à un etudiant" << endl;
+    cout << "4. Ajouter un dîplome à un etudiant" << endl;
+    cout << "5. Ajouter une experience à un etudiant" << endl;
 
-    cout << "6. Enlever un étudiant" << endl;
-    cout << "7. Enlever le rendez-vous d'un étudiant" << endl;
-    cout << "8. Enlever un dîplome à un étudiant" << endl;
-    cout << "9. Enlever une expérience à un étudiant" << endl;
+    cout << "6. Enlever un etudiant" << endl;
+    cout << "7. Enlever le rendez-vous d'un etudiant" << endl;
+    cout << "8. Enlever un dîplome à un etudiant" << endl;
+    cout << "9. Enlever une experience à un etudiant" << endl;
 
     cout << "10. Afficher les etudiants participants aux rencontres" << endl;
-    cout << "11. Afficher les rendez-vous d'un étudiant" << endl;
-    cout << "12. Afficher les dîplomes d'un étudiant" << endl;
-    cout << "13. Afficher les expériences d'un étudiant" << endl;
+    cout << "11. Afficher les rendez-vous d'un etudiant" << endl;
+    cout << "12. Afficher les dîplomes d'un etudiant" << endl;
+    cout << "13. Afficher les experiences d'un etudiant" << endl;
     cout << "14. Afficher le CV d'un Etudiant" << endl;
 
     // ------- ENTREPRISES ------- //
@@ -91,7 +91,7 @@ Date* createDate() {
     cin >> date;
 
     stringstream ss(date);
-    char separateur; // le caractère qui sépare jours mois et années (/)
+    char separateur; // le caractère qui separe jours mois et annees (/)
 
     ss >> day >> separateur >> month >> separateur >> year;
 
@@ -104,7 +104,7 @@ Heure* createHeure() {
     cin >> heure;
 
     stringstream ss(heure);
-    char separateur; // le caractère qui sépare jours mois et années (/)
+    char separateur; // le caractère qui separe jours mois et annees (/)
 
     ss >> heures >> separateur >> minutes;
 
@@ -154,8 +154,8 @@ int main() {
 
     // ---- CREATION D'ETUDIANTS ---- //
 
-    //On crée 3 étudiants
-    Etudiant etu1(1, "Jean", "Jean", "11 rue de la rue, Paris", "0606060606",  &ins1); //création d'un étudiant simple pour le test
+    //On cree 3 etudiants
+    Etudiant etu1(1, "Jean", "Jean", "11 rue de la rue, Paris", "0606060606",  &ins1); //creation d'un etudiant simple pour le test
     EtudiantPremierCycle etu2(2, "Claude", "Bernard", "12 rue qui existe, Limoges", "0707070707", &ins2, "BAC S", "2019", "Limoges");
     EtudiantDeuxiemeCycle etu3(3, "Jean", "Michel", "13 rue sympa, Lyon", "0808080808", &ins3, "Informatique");
 
@@ -163,12 +163,12 @@ int main() {
 
     // ---- CREATION D'EXPERIENCES ---- //
 
-    //dates des expériences
+    //dates des experiences
     Date dateDebutExp1(16, 4, 2019);
     Date dateFinExp1(27, 6, 2019);
 
-    //expériences
-    ExperiencePro ep1(&dateDebutExp1, &dateFinExp1, "Thales", "développeur");   
+    //experiences
+    ExperiencePro ep1(&dateDebutExp1, &dateFinExp1, "Thales", "developpeur");   
 
     // CREATION D'ENTREPRISES
 
@@ -177,12 +177,12 @@ int main() {
 
     // ---- CREATION DE RENDEZ-VOUS ---- //
 
-    //Création de dates
+    //Creation de dates
     Date date1(2, 4, 2025);
     Date date2(2, 4 ,2025); 
     Date date3(4, 4, 2025);
 
-    //Création d'heures de début et de fin
+    //Creation d'heures de debut et de fin
     Heure heureDebut(9,30);
     Heure heureDebut2(8,00);
     Heure heureDebut3(8,00);
@@ -259,7 +259,7 @@ int main() {
 
                 int numeroEtudiant;
 
-                cout << "Entrez le numéro de l'étudiant a chercher : ";
+                cout << "Entrez le numero de l'etudiant a chercher : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -268,7 +268,7 @@ int main() {
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 RetourMenu();
                 break;
@@ -281,7 +281,7 @@ int main() {
                 gestionEtudiant.AfficheRappelEtudiant();
 
                 string nomEntreprise, date, heureDebut, heureFin;
-                cout << "Entrez le numéro de l'étudiant pour qui vous voulez planifier un rendez-vous : ";
+                cout << "Entrez le numero de l'etudiant pour qui vous voulez planifier un rendez-vous : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -294,7 +294,7 @@ int main() {
                     {
                         cout << "Entrez la date du rdv (jj/mm/aaaa): ";
                         Date* D = createDate();
-                        cout << "Entrez l'heure de début du rendez-vous (H:M): ";
+                        cout << "Entrez l'heure de debut du rendez-vous (H:M): ";
                         Heure* H = createHeure();
                         cout << "Entrez l'heure de fin du rendez-vous (H:M): ";
                         Heure* H2 = createHeure();
@@ -303,12 +303,12 @@ int main() {
                     }
                     else
                     {
-                        cout << "Aucune entreprise trouvée avec le nom " << nomEntreprise << ". Veuillez Réessayer.";
+                        cout << "Aucune entreprise trouvee avec le nom " << nomEntreprise << ". Veuillez Reessayer.";
                     }
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 RetourMenu();
                 break;
@@ -321,7 +321,7 @@ int main() {
                 gestionEtudiant.AfficheRappelEtudiant();
 
                 string nomDiplome, codeDiplome, lieuDiplome;
-                cout << "Entrez le numéro de l'étudiant pour qui vous voulez ajouter un diplome : ";
+                cout << "Entrez le numero de l'etudiant pour qui vous voulez ajouter un diplome : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -338,7 +338,7 @@ int main() {
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 RetourMenu();
                 break;
@@ -351,24 +351,24 @@ int main() {
                 gestionEtudiant.AfficheRappelEtudiant();
 
                 string dateDebut, dateFin, nomEntreprise, poste;
-                cout << "Entrez le numéro de l'étudiant pour qui vous voulez ajouter une expérience : ";
+                cout << "Entrez le numero de l'etudiant pour qui vous voulez ajouter une experience : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
                 {
                     cout << "Entrez le nom de l'entreprise : ";
                     cin >> nomEntreprise;
-                    cout << "Entrez le poste occupé : ";
+                    cout << "Entrez le poste occupe : ";
                     cin >> poste;
-                    cout << "Entrez la date de début de l'expérience (jj/mm/aaaa): ";
+                    cout << "Entrez la date de debut de l'experience (jj/mm/aaaa): ";
                     Date* dateDebut = createDate();
-                    cout << "Entrez la date de fin de l'expérience (jj/mm/aaaa): ";
+                    cout << "Entrez la date de fin de l'experience (jj/mm/aaaa): ";
                     Date* dateFin = createDate();
                     etudiant->addExperience(new ExperiencePro(dateDebut, dateFin, nomEntreprise, poste));
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 RetourMenu();
                 break;
@@ -381,7 +381,7 @@ int main() {
                 int numeroEtudiant;
 
                 gestionEtudiant.AfficheRappelEtudiant();
-                cout << "Entrez le numéro de l'étudiant à enlever : ";
+                cout << "Entrez le numero de l'etudiant à enlever : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -391,7 +391,7 @@ int main() {
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
                 RetourMenu();
@@ -406,12 +406,12 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez enlever un rendez-vous : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez enlever un rendez-vous : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant->getRendezVous().empty())
                 {
-                    cout << "Aucun rendez-vous n'est planifié pour l'étudiant " << etudiant->getNomEtudiant() << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun rendez-vous n'est planifie pour l'etudiant " << etudiant->getNomEtudiant() << ". Veuillez Reessayer."<< endl;
                     RetourMenu();
                     break;
                 }
@@ -422,7 +422,7 @@ int main() {
                     cin >> nomEntreprise;
                     cout << "Entrez la date du rendez-vous (jj/mm/aaaa): ";
                     Date* date = createDate();
-                    cout << "Entrez l'heure de début du rendez-vous (H:M): ";
+                    cout << "Entrez l'heure de debut du rendez-vous (H:M): ";
                     Heure* heureDebut = createHeure();
                     cout << "Entrez l'heure de fin du rendez-vous (H:M): ";
                     Heure* heureFin = createHeure();
@@ -443,12 +443,12 @@ int main() {
                     }
                     else
                     {
-                        cout << "Aucun rendez-vous trouvé.. Vérifiez les informations saisies"<< endl;
+                        cout << "Aucun rendez-vous trouve.. Verifiez les informations saisies"<< endl;
                     }
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
                 RetourMenu();
@@ -461,12 +461,12 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez enlever un diplome : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez enlever un diplome : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant->getDiplomes().empty())
                 {
-                    cout << "Aucun diplôme n'est enregistré pour l'étudiant " << etudiant->getNomEtudiant() << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun diplôme n'est enregistre pour l'etudiant " << etudiant->getNomEtudiant() << ". Veuillez Reessayer."<< endl;
                     RetourMenu();
                     break;
                 }
@@ -489,7 +489,7 @@ int main() {
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
 
@@ -504,12 +504,12 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez enlever une expérience : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez enlever une experience : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant->getExperiences().empty())
                 {
-                    cout << "Aucune expérience n'est enregistrée pour l'étudiant " << etudiant->getNomEtudiant() << ". Veuillez Réessayer.";
+                    cout << "Aucune experience n'est enregistree pour l'etudiant " << etudiant->getNomEtudiant() << ". Veuillez Reessayer.";
                      RetourMenu();
                     break;
                 }
@@ -517,13 +517,13 @@ int main() {
                 {
                     etudiant->AfficheExperiences();
 
-                    cout << "Entrez le nom de l'entreprise de l'expérience à enlever : ";
+                    cout << "Entrez le nom de l'entreprise de l'experience à enlever : ";
                     cin >> nomEntreprise;
-                    cout << "Entrez la fonction occupée lors de l'expérience : ";
+                    cout << "Entrez la fonction occupee lors de l'experience : ";
                     cin >> fonction;
-                    cout << "Entrez la date de début de l'expérience :";
+                    cout << "Entrez la date de debut de l'experience :";
                     Date* dateDebut = createDate();
-                    cout << "Entrez la date de fin de l'expérience :";
+                    cout << "Entrez la date de fin de l'experience :";
                     Date* dateFin = createDate();
 
                     for(auto& experience : etudiant->getExperiences())
@@ -537,7 +537,7 @@ int main() {
                 }
                 else
                 {
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
 
@@ -561,7 +561,7 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez afficher les rendez-vous : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez afficher les rendez-vous : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -571,7 +571,7 @@ int main() {
                 else
                 {
                     cout << endl;
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
                 RetourMenu();
@@ -584,7 +584,7 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez afficher les diplomes : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez afficher les diplomes : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -594,7 +594,7 @@ int main() {
                 else
                 {
                     cout << endl;
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
 
@@ -608,7 +608,7 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez afficher les expériences : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez afficher les experiences : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -618,7 +618,7 @@ int main() {
                 else
                 {
                     cout << endl;
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
 
@@ -632,7 +632,7 @@ int main() {
 
                 gestionEtudiant.AfficheRappelEtudiant();
 
-                cout << "Entrez le numéro de l'étudiant dont vous voulez afficher le CV : ";
+                cout << "Entrez le numero de l'etudiant dont vous voulez afficher le CV : ";
                 cin >> numeroEtudiant;
                 Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                 if(etudiant != nullptr)
@@ -642,7 +642,7 @@ int main() {
                 else
                 {
                     cout << endl;
-                    cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer."<< endl;
                 }
                 cout << endl;
 
@@ -680,11 +680,11 @@ int main() {
                 Entreprise* entreprise = gestionEntreprise.getEntreprise(nom);
                 if(entreprise != nullptr)
                 {
-                    cout << "Entreprise trouvée : " << entreprise->getNom() << endl;
+                    cout << "Entreprise trouvee : " << entreprise->getNom() << endl;
                 }
                 else
                 {
-                    cout << "Aucune entreprise trouvée avec le nom " << nom << ". Veuillez Réessayer."<< endl;
+                    cout << "Aucune entreprise trouvee avec le nom " << nom << ". Veuillez Reessayer."<< endl;
                 }
                 
                 RetourMenu();
@@ -704,14 +704,14 @@ int main() {
                 if(entreprise != nullptr)
                 {
                     gestionEtudiant.AfficheRappelEtudiant();
-                    cout << "Entrez le numéro de l'étudiant avec qui vous voulez planifier un rendez-vous : ";
+                    cout << "Entrez le numero de l'etudiant avec qui vous voulez planifier un rendez-vous : ";
                     cin >> numeroEtudiant;
                     Etudiant* etudiant = gestionEtudiant.getEtudiant(numeroEtudiant);
                     if(etudiant != nullptr)
                     {
                         cout << "Entrez la date du rdv (jj/mm/aaaa): ";
                         Date* D = createDate();
-                        cout << "Entrez l'heure de début du rendez-vous (H:M): ";
+                        cout << "Entrez l'heure de debut du rendez-vous (H:M): ";
                         Heure* H = createHeure();
                         cout << "Entrez l'heure de fin du rendez-vous (H:M): ";
                         Heure* H2 = createHeure();
@@ -719,12 +719,12 @@ int main() {
                     }
                     else
                     {
-                        cout << "Aucun étudiant trouvé avec le numéro " << numeroEtudiant << ". Veuillez Réessayer.";
+                        cout << "Aucun etudiant trouve avec le numero " << numeroEtudiant << ". Veuillez Reessayer.";
                     }
                 }
                 else
                 {
-                    cout << "Aucune entreprise trouvée avec le nom " << nomEntreprise << ". Veuillez Réessayer.";
+                    cout << "Aucune entreprise trouvee avec le nom " << nomEntreprise << ". Veuillez Reessayer.";
                 }
 
                 RetourMenu();
@@ -745,7 +745,7 @@ int main() {
                 {
                     if(entreprise->getRendezVous().empty())
                     {
-                        cout << "Aucun rendez-vous n'est planifié pour l'entreprise " << entreprise->getNom() << ". Veuillez Réessayer."<< endl;
+                        cout << "Aucun rendez-vous n'est planifie pour l'entreprise " << entreprise->getNom() << ". Veuillez Reessayer."<< endl;
                         RetourMenu();
                         break;
                     }
@@ -753,11 +753,11 @@ int main() {
                     cout << endl;
                     gestionEtudiant.AfficheRappelEtudiant();
 
-                    cout << "Entrez le numéro de l'étudiant avec qui vous voulez enlever un rendez-vous : ";
+                    cout << "Entrez le numero de l'etudiant avec qui vous voulez enlever un rendez-vous : ";
                     cin >> numeroEtudiant;
                     cout << "Entrez la date du rendez-vous (jj/mm/aaaa): ";
                     Date* D = createDate();
-                    cout << "Entrez l'heure de début du rendez-vous (H:M): ";
+                    cout << "Entrez l'heure de debut du rendez-vous (H:M): ";
                     Heure* H = createHeure();
                     cout << "Entrez l'heure de fin du rendez-vous (H:M): ";
                     Heure* H2 = createHeure();
@@ -778,12 +778,12 @@ int main() {
                     }
                     else
                     {
-                        cout << "Aucun rendez-vous trouvé.. Vérifiez les informations saisies"<< endl;
+                        cout << "Aucun rendez-vous trouve.. Verifiez les informations saisies"<< endl;
                     }
                 }
                 else
                 {
-                    cout << "Aucune entreprise trouvée avec le nom " << nomEntreprise << ". Veuillez Réessayer.";
+                    cout << "Aucune entreprise trouvee avec le nom " << nomEntreprise << ". Veuillez Reessayer.";
                 }
 
                 RetourMenu();
@@ -814,7 +814,7 @@ int main() {
                 }
                 else
                 {
-                    cout << "Aucune entreprise trouvée avec le nom " << nomEntreprise << ". Veuillez Réessayer.";
+                    cout << "Aucune entreprise trouvee avec le nom " << nomEntreprise << ". Veuillez Reessayer.";
                 }
                 
                 RetourMenu();
@@ -838,7 +838,7 @@ int main() {
                 gestionEntreprise.removeRendezVous();
                 gestionEtudiant.removeRendezVous();
                 cout << endl;
-                cout << "\033[4mTous les rendez-vous ont été supprimés.\033[0m" << endl;
+                cout << "\033[4mTous les rendez-vous ont ete supprimes.\033[0m" << endl;
                 cout << endl;
 
                 RetourMenu();
