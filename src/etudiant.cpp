@@ -190,6 +190,7 @@ void Etudiant::AfficheDiplomes() const
     }
     else
     {
+        cout << "Diplômes obtenus par " << nom << " " << prenom << ":" << endl;
         for (Diplome* diplome : ensDiplomes)
         {
             diplome->Affiche();

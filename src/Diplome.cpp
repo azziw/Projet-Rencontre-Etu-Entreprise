@@ -8,9 +8,16 @@ using namespace std;
 
 // ---- METHODES ---- //
 
+//On gère le cas où le constructeur n'a pas de Date (diplôme en cours)
 void Diplome::Affiche() const {
 
-    cout << "Diplome: " << nomNational << ", Code: " << Code << ", Date: " << dateObtention->toString() << ", Lieu: " << lieuObtention << endl;
+    cout << "Diplome: " << nomNational << ", Code: " << Code << ", Lieu: " << lieuObtention;
+    //Si on ne gère pas de date, on affiche que le diplôme est en cours.
+    if (dateObtention != nullptr) {
+        cout << ", Date d'obtention: " << dateObtention->toString() << endl;
+    } else {
+        cout << ", Diplome en cours." << endl;
+    }
 }
 
 // -- GETTERS -- //

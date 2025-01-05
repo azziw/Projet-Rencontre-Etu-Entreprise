@@ -23,6 +23,14 @@ class Diplome {
             lieuObtention = lieu;
         }
 
+        //Constructeur sans date pour représenter un diplome en cours.
+        Diplome(string code, string nom, string lieu)
+        {
+            Code = code;
+            nomNational = nom;
+            lieuObtention = lieu;
+        }
+
 
 // ---- METHODES ---- //
 
@@ -41,6 +49,7 @@ class Diplome {
         void setNom(string nom);
         void setDate(Date* date);
         void setLieu(string lieu);
+
 };
 
 #endif
