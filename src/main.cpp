@@ -77,8 +77,9 @@ void displayMenu() {
     // ------- RENCONTRES ------- //
     cout << "\n----- RENCONTRE -----" << endl;
     cout << "21. Afficher tout les rendez-vous de la rencontre" << endl;
-
     cout << "22. Supprimer tout les rendez-vous de la rencontre" << endl;
+    cout << "23. Afficher tout les rendez-vous de toutes les entreprises" << endl;
+    cout << "24. Afficher tout les rendez-vous de tous les étudiants" << endl;
 
     cout << "30. Quitter" << endl;
     cout << endl;
@@ -839,6 +840,24 @@ int main() {
                 gestionEtudiant.removeRendezVous();
                 cout << endl;
                 cout << "\033[4mTous les rendez-vous ont ete supprimes.\033[0m" << endl;
+                cout << endl;
+
+                RetourMenu();
+                break;
+            }
+            case 23:
+            {
+                nettoieEcran();
+                gestionEntreprise.AfficheRdv();
+                cout << endl;
+
+                RetourMenu();
+                break;
+            }
+            case 24:
+            {
+                nettoieEcran();
+                gestionEtudiant.AfficheRdv();
                 cout << endl;
 
                 RetourMenu();
