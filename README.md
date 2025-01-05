@@ -1,6 +1,6 @@
 # Projet Rencontres Étudiants-Entreprises (REE)
 
-## Exécution
+## Exécutione
 
 g++ -std=c++11 -o programme main.cpp Entreprise.cpp Etudiant.cpp RendezVous.cpp ExperiencePro.cpp InscriptionActuelle.cpp Date.cpp Heure.cpp Diplome.cpp GestionEtudiant.cpp GestionEntreprise.cpp DoubleDiplome.cpp EtudiantDeuxiemeCycle.cpp EtudiantPremierCycle.cpp
 
